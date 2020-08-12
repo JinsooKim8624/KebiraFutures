@@ -22,6 +22,14 @@ namespace KebiraFutures
                 col.ReadOnly = true;
             }
             dataGridView1.Columns[1].ReadOnly = false;//비밀번호 입력란
+            if (실계좌여부)
+            {
+                textBoxPwd.Text = System.Configuration.ConfigurationManager.AppSettings["RealOrderPwd"];
+            }
+            else
+            {
+                textBoxPwd.Text = System.Configuration.ConfigurationManager.AppSettings["SimulatedOrderPwd"];
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -57,7 +65,7 @@ namespace KebiraFutures
 
         private void button2_Click(object sender, EventArgs e)//일괄 비밀번호 등록 및 저장
         {
-            string pass = textBox1.Text.Trim();
+            string pass = textBoxPwd.Text.Trim();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 row.Cells["Pass"].Value = pass;//비밀번호 입력

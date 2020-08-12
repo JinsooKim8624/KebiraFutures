@@ -51,22 +51,22 @@
             this.현재가ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.옵션전광판ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxInitialTime = new System.Windows.Forms.TextBox();
+            this.textBoxBeginTime = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxEndTime = new System.Windows.Forms.TextBox();
-            this.textBoxLongEstimateConclusionReangeEnd = new System.Windows.Forms.TextBox();
+            this.textBoxLongEstimateConclusionRangeEnd = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxLongEstimateConclusionReangeBegin = new System.Windows.Forms.TextBox();
+            this.textBoxLongEstimateConclusionRangeBegin = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxtextBoxShortEstimateConclusionReangeEnd = new System.Windows.Forms.TextBox();
+            this.textBoxShortEstimateConclusionRangeEnd = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxShortEstimateConclusionReangeBegin = new System.Windows.Forms.TextBox();
-            this.textBoxtextBoxShortQtyDiffEnd = new System.Windows.Forms.TextBox();
+            this.textBoxShortEstimateConclusionRangeBegin = new System.Windows.Forms.TextBox();
+            this.textBoxShortQtySumDiffEnd = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxShortQtyDiffBegin = new System.Windows.Forms.TextBox();
-            this.textBoxLongQtyDiffEnd = new System.Windows.Forms.TextBox();
+            this.textBoxShortQtySumDiffBegin = new System.Windows.Forms.TextBox();
+            this.textBoxLongQtySumDiffEnd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxLongQtyDiffBegin = new System.Windows.Forms.TextBox();
+            this.textBoxLongQtySumDiffBegin = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxShortTickRangeEnd = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -97,7 +97,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.textBoxShortSpecialLossCutEnd = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBoxtextBoxShortSpecialLossCutBegin = new System.Windows.Forms.TextBox();
+            this.textBoxShortSpecialLossCutBegin = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -314,13 +314,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "시간설정";
             // 
-            // textBoxInitialTime
+            // textBoxBeginTime
             // 
-            this.textBoxInitialTime.Location = new System.Drawing.Point(216, 44);
-            this.textBoxInitialTime.Name = "textBoxInitialTime";
-            this.textBoxInitialTime.Size = new System.Drawing.Size(55, 21);
-            this.textBoxInitialTime.TabIndex = 3;
-            this.textBoxInitialTime.Text = "090000";
+            this.textBoxBeginTime.Location = new System.Drawing.Point(216, 44);
+            this.textBoxBeginTime.Name = "textBoxBeginTime";
+            this.textBoxBeginTime.Size = new System.Drawing.Size(55, 21);
+            this.textBoxBeginTime.TabIndex = 3;
             // 
             // label2
             // 
@@ -337,15 +336,13 @@
             this.textBoxEndTime.Name = "textBoxEndTime";
             this.textBoxEndTime.Size = new System.Drawing.Size(57, 21);
             this.textBoxEndTime.TabIndex = 5;
-            this.textBoxEndTime.Text = "154500";
             // 
-            // textBoxLongEstimateConclusionReangeEnd
+            // textBoxLongEstimateConclusionRangeEnd
             // 
-            this.textBoxLongEstimateConclusionReangeEnd.Location = new System.Drawing.Point(307, 71);
-            this.textBoxLongEstimateConclusionReangeEnd.Name = "textBoxLongEstimateConclusionReangeEnd";
-            this.textBoxLongEstimateConclusionReangeEnd.Size = new System.Drawing.Size(57, 21);
-            this.textBoxLongEstimateConclusionReangeEnd.TabIndex = 9;
-            this.textBoxLongEstimateConclusionReangeEnd.Text = "2.00";
+            this.textBoxLongEstimateConclusionRangeEnd.Location = new System.Drawing.Point(307, 71);
+            this.textBoxLongEstimateConclusionRangeEnd.Name = "textBoxLongEstimateConclusionRangeEnd";
+            this.textBoxLongEstimateConclusionRangeEnd.Size = new System.Drawing.Size(57, 21);
+            this.textBoxLongEstimateConclusionRangeEnd.TabIndex = 9;
             // 
             // label3
             // 
@@ -356,13 +353,12 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "~";
             // 
-            // textBoxLongEstimateConclusionReangeBegin
+            // textBoxLongEstimateConclusionRangeBegin
             // 
-            this.textBoxLongEstimateConclusionReangeBegin.Location = new System.Drawing.Point(216, 71);
-            this.textBoxLongEstimateConclusionReangeBegin.Name = "textBoxLongEstimateConclusionReangeBegin";
-            this.textBoxLongEstimateConclusionReangeBegin.Size = new System.Drawing.Size(55, 21);
-            this.textBoxLongEstimateConclusionReangeBegin.TabIndex = 7;
-            this.textBoxLongEstimateConclusionReangeBegin.Text = "0.10";
+            this.textBoxLongEstimateConclusionRangeBegin.Location = new System.Drawing.Point(216, 71);
+            this.textBoxLongEstimateConclusionRangeBegin.Name = "textBoxLongEstimateConclusionRangeBegin";
+            this.textBoxLongEstimateConclusionRangeBegin.Size = new System.Drawing.Size(55, 21);
+            this.textBoxLongEstimateConclusionRangeBegin.TabIndex = 7;
             // 
             // label4
             // 
@@ -373,13 +369,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "예상체결점위";
             // 
-            // textBoxtextBoxShortEstimateConclusionReangeEnd
+            // textBoxShortEstimateConclusionRangeEnd
             // 
-            this.textBoxtextBoxShortEstimateConclusionReangeEnd.Location = new System.Drawing.Point(307, 98);
-            this.textBoxtextBoxShortEstimateConclusionReangeEnd.Name = "textBoxtextBoxShortEstimateConclusionReangeEnd";
-            this.textBoxtextBoxShortEstimateConclusionReangeEnd.Size = new System.Drawing.Size(57, 21);
-            this.textBoxtextBoxShortEstimateConclusionReangeEnd.TabIndex = 12;
-            this.textBoxtextBoxShortEstimateConclusionReangeEnd.Text = "-0.10";
+            this.textBoxShortEstimateConclusionRangeEnd.Location = new System.Drawing.Point(307, 98);
+            this.textBoxShortEstimateConclusionRangeEnd.Name = "textBoxShortEstimateConclusionRangeEnd";
+            this.textBoxShortEstimateConclusionRangeEnd.Size = new System.Drawing.Size(57, 21);
+            this.textBoxShortEstimateConclusionRangeEnd.TabIndex = 12;
             // 
             // label5
             // 
@@ -390,21 +385,19 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "~";
             // 
-            // textBoxShortEstimateConclusionReangeBegin
+            // textBoxShortEstimateConclusionRangeBegin
             // 
-            this.textBoxShortEstimateConclusionReangeBegin.Location = new System.Drawing.Point(216, 98);
-            this.textBoxShortEstimateConclusionReangeBegin.Name = "textBoxShortEstimateConclusionReangeBegin";
-            this.textBoxShortEstimateConclusionReangeBegin.Size = new System.Drawing.Size(55, 21);
-            this.textBoxShortEstimateConclusionReangeBegin.TabIndex = 10;
-            this.textBoxShortEstimateConclusionReangeBegin.Text = "-2.00";
+            this.textBoxShortEstimateConclusionRangeBegin.Location = new System.Drawing.Point(216, 98);
+            this.textBoxShortEstimateConclusionRangeBegin.Name = "textBoxShortEstimateConclusionRangeBegin";
+            this.textBoxShortEstimateConclusionRangeBegin.Size = new System.Drawing.Size(55, 21);
+            this.textBoxShortEstimateConclusionRangeBegin.TabIndex = 10;
             // 
-            // textBoxtextBoxShortQtyDiffEnd
+            // textBoxShortQtySumDiffEnd
             // 
-            this.textBoxtextBoxShortQtyDiffEnd.Location = new System.Drawing.Point(307, 165);
-            this.textBoxtextBoxShortQtyDiffEnd.Name = "textBoxtextBoxShortQtyDiffEnd";
-            this.textBoxtextBoxShortQtyDiffEnd.Size = new System.Drawing.Size(57, 21);
-            this.textBoxtextBoxShortQtyDiffEnd.TabIndex = 19;
-            this.textBoxtextBoxShortQtyDiffEnd.Text = "-100";
+            this.textBoxShortQtySumDiffEnd.Location = new System.Drawing.Point(307, 165);
+            this.textBoxShortQtySumDiffEnd.Name = "textBoxShortQtySumDiffEnd";
+            this.textBoxShortQtySumDiffEnd.Size = new System.Drawing.Size(57, 21);
+            this.textBoxShortQtySumDiffEnd.TabIndex = 19;
             // 
             // label6
             // 
@@ -415,21 +408,19 @@
             this.label6.TabIndex = 18;
             this.label6.Text = "~";
             // 
-            // textBoxShortQtyDiffBegin
+            // textBoxShortQtySumDiffBegin
             // 
-            this.textBoxShortQtyDiffBegin.Location = new System.Drawing.Point(216, 165);
-            this.textBoxShortQtyDiffBegin.Name = "textBoxShortQtyDiffBegin";
-            this.textBoxShortQtyDiffBegin.Size = new System.Drawing.Size(55, 21);
-            this.textBoxShortQtyDiffBegin.TabIndex = 17;
-            this.textBoxShortQtyDiffBegin.Text = "-3000";
+            this.textBoxShortQtySumDiffBegin.Location = new System.Drawing.Point(216, 165);
+            this.textBoxShortQtySumDiffBegin.Name = "textBoxShortQtySumDiffBegin";
+            this.textBoxShortQtySumDiffBegin.Size = new System.Drawing.Size(55, 21);
+            this.textBoxShortQtySumDiffBegin.TabIndex = 17;
             // 
-            // textBoxLongQtyDiffEnd
+            // textBoxLongQtySumDiffEnd
             // 
-            this.textBoxLongQtyDiffEnd.Location = new System.Drawing.Point(307, 138);
-            this.textBoxLongQtyDiffEnd.Name = "textBoxLongQtyDiffEnd";
-            this.textBoxLongQtyDiffEnd.Size = new System.Drawing.Size(57, 21);
-            this.textBoxLongQtyDiffEnd.TabIndex = 16;
-            this.textBoxLongQtyDiffEnd.Text = "3000";
+            this.textBoxLongQtySumDiffEnd.Location = new System.Drawing.Point(307, 138);
+            this.textBoxLongQtySumDiffEnd.Name = "textBoxLongQtySumDiffEnd";
+            this.textBoxLongQtySumDiffEnd.Size = new System.Drawing.Size(57, 21);
+            this.textBoxLongQtySumDiffEnd.TabIndex = 16;
             // 
             // label7
             // 
@@ -440,13 +431,12 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "~";
             // 
-            // textBoxLongQtyDiffBegin
+            // textBoxLongQtySumDiffBegin
             // 
-            this.textBoxLongQtyDiffBegin.Location = new System.Drawing.Point(216, 138);
-            this.textBoxLongQtyDiffBegin.Name = "textBoxLongQtyDiffBegin";
-            this.textBoxLongQtyDiffBegin.Size = new System.Drawing.Size(55, 21);
-            this.textBoxLongQtyDiffBegin.TabIndex = 14;
-            this.textBoxLongQtyDiffBegin.Text = "100";
+            this.textBoxLongQtySumDiffBegin.Location = new System.Drawing.Point(216, 138);
+            this.textBoxLongQtySumDiffBegin.Name = "textBoxLongQtySumDiffBegin";
+            this.textBoxLongQtySumDiffBegin.Size = new System.Drawing.Size(55, 21);
+            this.textBoxLongQtySumDiffBegin.TabIndex = 14;
             // 
             // label8
             // 
@@ -463,7 +453,6 @@
             this.textBoxShortTickRangeEnd.Name = "textBoxShortTickRangeEnd";
             this.textBoxShortTickRangeEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxShortTickRangeEnd.TabIndex = 26;
-            this.textBoxShortTickRangeEnd.Text = "-1";
             // 
             // label9
             // 
@@ -480,7 +469,6 @@
             this.textBoxShortTickRangeBegin.Name = "textBoxShortTickRangeBegin";
             this.textBoxShortTickRangeBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxShortTickRangeBegin.TabIndex = 24;
-            this.textBoxShortTickRangeBegin.Text = "-10";
             // 
             // textBoxLongTickRangeEnd
             // 
@@ -488,7 +476,6 @@
             this.textBoxLongTickRangeEnd.Name = "textBoxLongTickRangeEnd";
             this.textBoxLongTickRangeEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxLongTickRangeEnd.TabIndex = 23;
-            this.textBoxLongTickRangeEnd.Text = "10";
             // 
             // label10
             // 
@@ -505,7 +492,6 @@
             this.textBoxLongTickRangeBegin.Name = "textBoxLongTickRangeBegin";
             this.textBoxLongTickRangeBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxLongTickRangeBegin.TabIndex = 21;
-            this.textBoxLongTickRangeBegin.Text = "1";
             // 
             // label11
             // 
@@ -522,7 +508,6 @@
             this.textBoxShortLossCutEnd.Name = "textBoxShortLossCutEnd";
             this.textBoxShortLossCutEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxShortLossCutEnd.TabIndex = 33;
-            this.textBoxShortLossCutEnd.Text = "20";
             // 
             // label12
             // 
@@ -539,7 +524,6 @@
             this.textBoxShortLossCutBegin.Name = "textBoxShortLossCutBegin";
             this.textBoxShortLossCutBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxShortLossCutBegin.TabIndex = 31;
-            this.textBoxShortLossCutBegin.Text = "-20";
             // 
             // textBoxLongLossCutEnd
             // 
@@ -547,7 +531,6 @@
             this.textBoxLongLossCutEnd.Name = "textBoxLongLossCutEnd";
             this.textBoxLongLossCutEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxLongLossCutEnd.TabIndex = 30;
-            this.textBoxLongLossCutEnd.Text = "20";
             // 
             // label13
             // 
@@ -564,7 +547,6 @@
             this.textBoxLongLossCutBegin.Name = "textBoxLongLossCutBegin";
             this.textBoxLongLossCutBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxLongLossCutBegin.TabIndex = 28;
-            this.textBoxLongLossCutBegin.Text = "-20";
             // 
             // label14
             // 
@@ -581,7 +563,6 @@
             this.textBoxLongSpecialLossCutEnd.Name = "textBoxLongSpecialLossCutEnd";
             this.textBoxLongSpecialLossCutEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxLongSpecialLossCutEnd.TabIndex = 36;
-            this.textBoxLongSpecialLossCutEnd.Text = "15";
             // 
             // label15
             // 
@@ -598,7 +579,6 @@
             this.textBoxLongSpecialLossCutBegin.Name = "textBoxLongSpecialLossCutBegin";
             this.textBoxLongSpecialLossCutBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxLongSpecialLossCutBegin.TabIndex = 34;
-            this.textBoxLongSpecialLossCutBegin.Text = "-15";
             // 
             // label16
             // 
@@ -696,7 +676,6 @@
             this.textBoxShortSpecialLossCutEnd.Name = "textBoxShortSpecialLossCutEnd";
             this.textBoxShortSpecialLossCutEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxShortSpecialLossCutEnd.TabIndex = 48;
-            this.textBoxShortSpecialLossCutEnd.Text = "15";
             // 
             // label26
             // 
@@ -707,13 +686,12 @@
             this.label26.TabIndex = 47;
             this.label26.Text = "~";
             // 
-            // textBoxtextBoxShortSpecialLossCutBegin
+            // textBoxShortSpecialLossCutBegin
             // 
-            this.textBoxtextBoxShortSpecialLossCutBegin.Location = new System.Drawing.Point(216, 336);
-            this.textBoxtextBoxShortSpecialLossCutBegin.Name = "textBoxtextBoxShortSpecialLossCutBegin";
-            this.textBoxtextBoxShortSpecialLossCutBegin.Size = new System.Drawing.Size(55, 21);
-            this.textBoxtextBoxShortSpecialLossCutBegin.TabIndex = 46;
-            this.textBoxtextBoxShortSpecialLossCutBegin.Text = "-15";
+            this.textBoxShortSpecialLossCutBegin.Location = new System.Drawing.Point(216, 336);
+            this.textBoxShortSpecialLossCutBegin.Name = "textBoxShortSpecialLossCutBegin";
+            this.textBoxShortSpecialLossCutBegin.Size = new System.Drawing.Size(55, 21);
+            this.textBoxShortSpecialLossCutBegin.TabIndex = 46;
             // 
             // label27
             // 
@@ -748,7 +726,6 @@
             this.textBoxShortSpecialProfitCutEnd.Name = "textBoxShortSpecialProfitCutEnd";
             this.textBoxShortSpecialProfitCutEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxShortSpecialProfitCutEnd.TabIndex = 66;
-            this.textBoxShortSpecialProfitCutEnd.Text = "-10";
             // 
             // label30
             // 
@@ -765,7 +742,6 @@
             this.textBoxShortSpecialProfitCutBegin.Name = "textBoxShortSpecialProfitCutBegin";
             this.textBoxShortSpecialProfitCutBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxShortSpecialProfitCutBegin.TabIndex = 64;
-            this.textBoxShortSpecialProfitCutBegin.Text = "-500";
             // 
             // label31
             // 
@@ -800,7 +776,6 @@
             this.textBoxLongSpecialProfitCutEnd.Name = "textBoxLongSpecialProfitCutEnd";
             this.textBoxLongSpecialProfitCutEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxLongSpecialProfitCutEnd.TabIndex = 60;
-            this.textBoxLongSpecialProfitCutEnd.Text = "500";
             // 
             // label34
             // 
@@ -817,7 +792,6 @@
             this.textBoxLongSpecialProfitCutBegin.Name = "textBoxLongSpecialProfitCutBegin";
             this.textBoxLongSpecialProfitCutBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxLongSpecialProfitCutBegin.TabIndex = 58;
-            this.textBoxLongSpecialProfitCutBegin.Text = "10";
             // 
             // textBoxShortProfitCutEnd
             // 
@@ -825,7 +799,6 @@
             this.textBoxShortProfitCutEnd.Name = "textBoxShortProfitCutEnd";
             this.textBoxShortProfitCutEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxShortProfitCutEnd.TabIndex = 57;
-            this.textBoxShortProfitCutEnd.Text = "500";
             // 
             // label35
             // 
@@ -842,7 +815,6 @@
             this.textBoxShortProfitCutBegin.Name = "textBoxShortProfitCutBegin";
             this.textBoxShortProfitCutBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxShortProfitCutBegin.TabIndex = 55;
-            this.textBoxShortProfitCutBegin.Text = "-500";
             // 
             // textBoxLongProfitCutEnd
             // 
@@ -850,7 +822,6 @@
             this.textBoxLongProfitCutEnd.Name = "textBoxLongProfitCutEnd";
             this.textBoxLongProfitCutEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxLongProfitCutEnd.TabIndex = 54;
-            this.textBoxLongProfitCutEnd.Text = "500";
             // 
             // label36
             // 
@@ -867,7 +838,6 @@
             this.textBoxLongProfitCutBegin.Name = "textBoxLongProfitCutBegin";
             this.textBoxLongProfitCutBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxLongProfitCutBegin.TabIndex = 52;
-            this.textBoxLongProfitCutBegin.Text = "-500";
             // 
             // label37
             // 
@@ -906,7 +876,7 @@
             this.Controls.Add(this.label25);
             this.Controls.Add(this.textBoxShortSpecialLossCutEnd);
             this.Controls.Add(this.label26);
-            this.Controls.Add(this.textBoxtextBoxShortSpecialLossCutBegin);
+            this.Controls.Add(this.textBoxShortSpecialLossCutBegin);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label23);
@@ -933,30 +903,30 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBoxLongTickRangeBegin);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBoxtextBoxShortQtyDiffEnd);
+            this.Controls.Add(this.textBoxShortQtySumDiffEnd);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBoxShortQtyDiffBegin);
-            this.Controls.Add(this.textBoxLongQtyDiffEnd);
+            this.Controls.Add(this.textBoxShortQtySumDiffBegin);
+            this.Controls.Add(this.textBoxLongQtySumDiffEnd);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBoxLongQtyDiffBegin);
+            this.Controls.Add(this.textBoxLongQtySumDiffBegin);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBoxtextBoxShortEstimateConclusionReangeEnd);
+            this.Controls.Add(this.textBoxShortEstimateConclusionRangeEnd);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBoxShortEstimateConclusionReangeBegin);
-            this.Controls.Add(this.textBoxLongEstimateConclusionReangeEnd);
+            this.Controls.Add(this.textBoxShortEstimateConclusionRangeBegin);
+            this.Controls.Add(this.textBoxLongEstimateConclusionRangeEnd);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxLongEstimateConclusionReangeBegin);
+            this.Controls.Add(this.textBoxLongEstimateConclusionRangeBegin);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxEndTime);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxInitialTime);
+            this.Controls.Add(this.textBoxBeginTime);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "KebiraFutures";
+            this.Text = "케비라 선물";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.statusStrip1.ResumeLayout(false);
@@ -993,22 +963,22 @@
         private System.Windows.Forms.ToolStripMenuItem 현재가ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 옵션전광판ToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxInitialTime;
+        private System.Windows.Forms.TextBox textBoxBeginTime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxEndTime;
-        private System.Windows.Forms.TextBox textBoxLongEstimateConclusionReangeEnd;
+        private System.Windows.Forms.TextBox textBoxLongEstimateConclusionRangeEnd;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxLongEstimateConclusionReangeBegin;
+        private System.Windows.Forms.TextBox textBoxLongEstimateConclusionRangeBegin;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxtextBoxShortEstimateConclusionReangeEnd;
+        private System.Windows.Forms.TextBox textBoxShortEstimateConclusionRangeEnd;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxShortEstimateConclusionReangeBegin;
-        private System.Windows.Forms.TextBox textBoxtextBoxShortQtyDiffEnd;
+        private System.Windows.Forms.TextBox textBoxShortEstimateConclusionRangeBegin;
+        private System.Windows.Forms.TextBox textBoxShortQtySumDiffEnd;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxShortQtyDiffBegin;
-        private System.Windows.Forms.TextBox textBoxLongQtyDiffEnd;
+        private System.Windows.Forms.TextBox textBoxShortQtySumDiffBegin;
+        private System.Windows.Forms.TextBox textBoxLongQtySumDiffEnd;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxLongQtyDiffBegin;
+        private System.Windows.Forms.TextBox textBoxLongQtySumDiffBegin;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxShortTickRangeEnd;
         private System.Windows.Forms.Label label9;
@@ -1039,7 +1009,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox textBoxShortSpecialLossCutEnd;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBoxtextBoxShortSpecialLossCutBegin;
+        private System.Windows.Forms.TextBox textBoxShortSpecialLossCutBegin;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;

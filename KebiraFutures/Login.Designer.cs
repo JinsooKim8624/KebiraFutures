@@ -44,7 +44,6 @@
             this.txt_고객ID.Name = "txt_고객ID";
             this.txt_고객ID.Size = new System.Drawing.Size(100, 21);
             this.txt_고객ID.TabIndex = 1;
-            this.txt_고객ID.Text = "kjs8624";
             // 
             // label1
             // 
@@ -71,7 +70,6 @@
             this.txt_비밀번호.PasswordChar = '*';
             this.txt_비밀번호.Size = new System.Drawing.Size(100, 21);
             this.txt_비밀번호.TabIndex = 3;
-            this.txt_비밀번호.Text = "0987poiu";
             // 
             // label3
             // 

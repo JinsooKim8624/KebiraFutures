@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using XA_SESSIONLib;
 using System.Threading;
+using System.Configuration;
 
 namespace KebiraFutures
 {
@@ -220,8 +221,151 @@ namespace KebiraFutures
             OptionBoard myOptionBoard = new OptionBoard();
         }
 
+
+
+
+
+        public static float longEstimatedFr;
+        public static float longEstimatedTo;
+        public static float shortEstimatedFr;
+        public static float shortEstimatedTo;
+
+        public static int longQtySumDiffFr;
+        public static int longQtySumDiffTo;
+        public static int shortQtySumDiffFr;
+        public static int shortQtySumDiffTo;
+
+        public static int longEnterTickFr;
+        public static int longEnterTickTo;
+        public static int shortEnterTickFr;
+        public static int shortEnterTickTo;
+
+
+        public static float longLossCutFr;
+        public static float longLossCutTo;
+        public static float shortLossCutFr;
+        public static float shortLossCutTo;
+
+        public static float longSpecialLossCutFr;
+        public static float longSpecialLossCutTo;
+        public static float shortSpecialLossCutFr;
+        public static float shortSpecialLossCutTo;
+
+
+        public static float longProfitCutFr;
+        public static float longProfitCutTo;
+        public static float shortProfitCutFr;
+        public static float shortProfitCutTo;
+
+        public static float longSpecialProfitCutFr;
+        public static float longSpecialProfitCutTo;
+        public static float shortSpecialProfitCutFr;
+        public static float shortSpecialProfitCutTo;
+
+
+
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+            //시간 설정
+            textBoxBeginTime.Text =  ConfigurationManager.AppSettings["BeginTime"];
+            textBoxEndTime.Text = ConfigurationManager.AppSettings["EndTime"];
+
+            //예상체결범위
+            textBoxLongEstimateConclusionRangeBegin.Text = ConfigurationManager.AppSettings["LongEstimatedBegin"];
+            textBoxLongEstimateConclusionRangeEnd.Text = ConfigurationManager.AppSettings["LongEstimatedEnd"];
+
+            textBoxShortEstimateConclusionRangeBegin.Text = ConfigurationManager.AppSettings["ShortEstimatedBegin"];
+            textBoxShortEstimateConclusionRangeEnd.Text = ConfigurationManager.AppSettings["ShortEstimatedEnd"];
+
+
+            //선물총잔량설정범위
+            textBoxLongQtySumDiffBegin.Text = ConfigurationManager.AppSettings["LongQtySumDiffBegin"];
+            textBoxLongQtySumDiffEnd.Text = ConfigurationManager.AppSettings["LongQtySumDiffEnd"];
+
+            textBoxShortQtySumDiffBegin.Text = ConfigurationManager.AppSettings["ShortQtySumDiffBegin"];
+            textBoxShortQtySumDiffEnd.Text = ConfigurationManager.AppSettings["ShortQtySumDiffEnd"];
+
+
+            //진입틱수설정범위
+            textBoxLongTickRangeBegin.Text = ConfigurationManager.AppSettings["LongEnterTickBegin"];
+            textBoxLongTickRangeEnd.Text = ConfigurationManager.AppSettings["LongEnterTickEnd"];
+
+            textBoxShortTickRangeBegin.Text = ConfigurationManager.AppSettings["ShortEnterTickBegin"];
+            textBoxShortTickRangeEnd.Text = ConfigurationManager.AppSettings["ShortEnterTickEnd"];
+
+
+            //손절라인
+            textBoxLongLossCutBegin.Text = ConfigurationManager.AppSettings["LongLossCutBegin"];
+            textBoxLongLossCutEnd.Text = ConfigurationManager.AppSettings["LongLossCutEnd"];
+
+            textBoxShortLossCutBegin.Text = ConfigurationManager.AppSettings["ShortLossCutBegin"];
+            textBoxShortLossCutEnd.Text = ConfigurationManager.AppSettings["ShortLossCutEnd"];
+
+            //손절라인_특정
+            textBoxLongSpecialLossCutBegin.Text = ConfigurationManager.AppSettings["LongSpecialLossCutBegin"];
+            textBoxLongSpecialLossCutEnd.Text = ConfigurationManager.AppSettings["LongSpecialLossCutEnd"];
+
+            textBoxShortSpecialLossCutBegin.Text = ConfigurationManager.AppSettings["ShortSpecialLossCutBegin"];
+            textBoxShortSpecialLossCutEnd.Text = ConfigurationManager.AppSettings["ShortSpecialLossCutEnd"];
+
+
+            //익절라인
+            textBoxLongProfitCutBegin.Text = ConfigurationManager.AppSettings["LongProfitCutBegin"];
+            textBoxLongProfitCutEnd.Text = ConfigurationManager.AppSettings["LongProfitCutEnd"];
+
+            textBoxShortProfitCutBegin.Text = ConfigurationManager.AppSettings["ShortProfitCutBegin"];
+            textBoxShortProfitCutEnd.Text = ConfigurationManager.AppSettings["ShortProfitCutEnd"];
+
+            //익절라인_특정
+            textBoxLongSpecialProfitCutBegin.Text = ConfigurationManager.AppSettings["LongSpecialProfitCutBegin"];
+            textBoxLongSpecialProfitCutEnd.Text = ConfigurationManager.AppSettings["LongSpecialProfitCutEnd"];
+
+            textBoxShortSpecialProfitCutBegin.Text = ConfigurationManager.AppSettings["ShortSpecialProfitCutBegin"];
+            textBoxShortSpecialProfitCutEnd.Text = ConfigurationManager.AppSettings["ShortSpecialProfitCutEnd"];
+
+
+
+            longEstimatedFr  = Convert.ToSingle(textBoxLongEstimateConclusionRangeBegin.Text);
+            longEstimatedTo = Convert.ToSingle(textBoxLongEstimateConclusionRangeEnd.Text); 
+            shortEstimatedFr = Convert.ToSingle(textBoxShortEstimateConclusionRangeBegin.Text); 
+            shortEstimatedTo = Convert.ToSingle(textBoxShortEstimateConclusionRangeEnd.Text); 
+
+            longQtySumDiffFr = Convert.ToInt32(textBoxLongQtySumDiffBegin.Text);
+            longQtySumDiffTo = Convert.ToInt32(textBoxLongQtySumDiffEnd.Text);
+            shortQtySumDiffFr = Convert.ToInt32(textBoxShortQtySumDiffBegin.Text);
+            shortQtySumDiffTo = Convert.ToInt32(textBoxShortQtySumDiffEnd.Text);
+
+            longEnterTickFr = Convert.ToInt32(textBoxLongTickRangeBegin.Text);
+            longEnterTickTo = Convert.ToInt32(textBoxLongTickRangeEnd.Text);
+            shortEnterTickFr = Convert.ToInt32(textBoxShortTickRangeBegin.Text);
+            shortEnterTickTo = Convert.ToInt32(textBoxShortTickRangeEnd.Text);
+
+
+            longLossCutFr = Convert.ToSingle(textBoxLongLossCutBegin.Text);
+            longLossCutTo = Convert.ToSingle(textBoxLongLossCutEnd.Text);
+            shortLossCutFr = Convert.ToSingle(textBoxShortLossCutBegin.Text);
+            shortLossCutTo = Convert.ToSingle(textBoxShortLossCutEnd.Text);
+
+            longSpecialLossCutFr = Convert.ToSingle(textBoxLongSpecialLossCutBegin.Text);
+            longSpecialLossCutTo = Convert.ToSingle(textBoxLongSpecialLossCutEnd.Text);
+            shortSpecialLossCutFr = Convert.ToSingle(textBoxShortSpecialLossCutBegin.Text);
+            shortSpecialLossCutTo = Convert.ToSingle(textBoxShortSpecialLossCutEnd.Text);
+
+
+            longProfitCutFr = Convert.ToSingle(textBoxLongProfitCutBegin.Text);
+            longProfitCutTo = Convert.ToSingle(textBoxLongProfitCutEnd.Text);
+            shortProfitCutFr = Convert.ToSingle(textBoxShortProfitCutBegin.Text);
+            shortProfitCutTo = Convert.ToSingle(textBoxShortProfitCutEnd.Text);
+
+            longSpecialProfitCutFr = Convert.ToSingle(textBoxLongSpecialProfitCutBegin.Text);
+            longSpecialProfitCutTo = Convert.ToSingle(textBoxLongSpecialProfitCutEnd.Text);
+            shortSpecialProfitCutFr = Convert.ToSingle(textBoxShortSpecialProfitCutBegin.Text);
+            shortSpecialProfitCutTo = Convert.ToSingle(textBoxShortSpecialProfitCutEnd.Text);
+
+
+
+
 
         }
     }
