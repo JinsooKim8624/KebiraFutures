@@ -20,6 +20,12 @@ namespace KebiraFutures
         OH0 myOH0;
         OC0 myOC0;
 
+
+
+        public static bool LongPosYN = false;
+        public static bool ShortPosYN = false;
+
+
         public CurrPrice()
         {
             InitializeComponent();
@@ -31,6 +37,9 @@ namespace KebiraFutures
 
             this.Show();
             MainForm.LoadedForm.Add(this);
+
+            Order myOrder = new Order("매수");
+
         }
 
         private void btn_종목_Click(object sender, EventArgs e)
@@ -247,7 +256,72 @@ namespace KebiraFutures
                                    myXARealClass.GetFieldData("OutBlock", "hotime")//호가시간
                                     };
             DataUpdate(Str);
+            KebiraLogic(Str);
         }
+
+
+        private void KebiraLogic(string[] strarray)
+        {
+            lbl_총매도잔량.Text = string.Format("{0:#,#}", int.Parse(strarray[30]));
+            lbl_총매수잔량.Text = string.Format("{0:#,#}", int.Parse(strarray[31]));
+            lbl_총매도건수.Text = string.Format("{0:#,#}", int.Parse(strarray[32]));
+            lbl_총매수건수.Text = string.Format("{0:#,#}", int.Parse(strarray[33]));
+
+            lbl_수신시각.Text = string.Format("{0:0#:##:##}", int.Parse(strarray[34]));
+            lbl_잔량차이.Text = string.Format("{0:#,#}", int.Parse(strarray[31]) - int.Parse(strarray[30]));
+
+            int diff = int.Parse(strarray[31]) - int.Parse(strarray[30]);
+
+            if ((string.Compare(MainForm.beginTime, strarray[30]) >= 0) && (string.Compare(MainForm.endTime, strarray[30]) <= 0))
+            {
+                lbl_수신시각.Enabled = true;
+                //매수로직
+                if (LongPosYN.Equals(true))
+                {
+                    //선물 총잔량
+                    if ((diff >= MainForm.longQtySumDiffFr) && (diff <= MainForm.longQtySumDiffTo)) //매수
+                    {
+                        if ((diff >= MainForm.longQtySumDiffFr) && (diff <= MainForm.longQtySumDiffTo))
+                        {
+
+                        }
+                    }
+
+
+                }
+
+
+                if (ShortPosYN.Equals(true))
+                {
+                    if ((diff >= MainForm.shortQtySumDiffFr) && (diff <= MainForm.shortQtySumDiffTo))
+                    {
+
+
+                    }
+
+
+                }
+
+
+            }
+            else
+            {
+                lbl_수신시각.Enabled = false;
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         private void ReceiveRealData_OC0(XARealClass myXARealClass)
         {
@@ -319,21 +393,52 @@ namespace KebiraFutures
 
             lbl_수신시각.Text = string.Format("{0:0#:##:##}", int.Parse(strarray[34]));
             lbl_잔량차이.Text = string.Format("{0:#,#}", int.Parse(strarray[31]) - int.Parse(strarray[30]));
+            int diff = int.Parse(strarray[31]) - int.Parse(strarray[30]);
+            if (diff > 0)
+            {
 
-            if (int.Parse(strarray[31]) - int.Parse(strarray[30]) > 0)
                 lbl_잔량차이.ForeColor = Color.Red;
-            else if (int.Parse(strarray[31]) - int.Parse(strarray[30]) < 0)
+            }
+            else if (diff < 0)
+            {
                 lbl_잔량차이.ForeColor = Color.Blue;
+
+            }
             else
+            {
                 lbl_잔량차이.ForeColor = Color.Black;
+            }
+
+
 
             CurrPriceUpdate();
         }
+
+
 
         private void CurrPrice_FormClosing(object sender, FormClosingEventArgs e)
         {
             Real해제();
             MainForm.LoadedForm.Remove(this);
         }
+
+
+
+        private void WriteSysMsg(string msg)
+        {
+            if (listBoxSysMsg.Items.Count >= 50000)
+            {
+                listBoxSysMsg.Items.RemoveAt(50000);
+
+            }
+            else
+            {
+                listBoxSysMsg.Items.Insert(0, msg);
+
+            }
+
+        }
+
+
     }
 }

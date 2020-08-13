@@ -223,12 +223,13 @@ namespace KebiraFutures
 
 
 
+        public static string beginTime;
+        public static string endTime;
 
-
-        public static float longEstimatedFr;
-        public static float longEstimatedTo;
-        public static float shortEstimatedFr;
-        public static float shortEstimatedTo;
+        public static double longEstimatedFr;
+        public static double longEstimatedTo;
+        public static double shortEstimatedFr;
+        public static double shortEstimatedTo;
 
         public static int longQtySumDiffFr;
         public static int longQtySumDiffTo;
@@ -241,26 +242,26 @@ namespace KebiraFutures
         public static int shortEnterTickTo;
 
 
-        public static float longLossCutFr;
-        public static float longLossCutTo;
-        public static float shortLossCutFr;
-        public static float shortLossCutTo;
+        public static double longLossCutFr;
+        public static double longLossCutTo;
+        public static double shortLossCutFr;
+        public static double shortLossCutTo;
 
-        public static float longSpecialLossCutFr;
-        public static float longSpecialLossCutTo;
-        public static float shortSpecialLossCutFr;
-        public static float shortSpecialLossCutTo;
+        public static double longSpecialLossCutFr;
+        public static double longSpecialLossCutTo;
+        public static double shortSpecialLossCutFr;
+        public static double shortSpecialLossCutTo;
 
 
-        public static float longProfitCutFr;
-        public static float longProfitCutTo;
-        public static float shortProfitCutFr;
-        public static float shortProfitCutTo;
+        public static double longProfitCutFr;
+        public static double longProfitCutTo;
+        public static double shortProfitCutFr;
+        public static double shortProfitCutTo;
 
-        public static float longSpecialProfitCutFr;
-        public static float longSpecialProfitCutTo;
-        public static float shortSpecialProfitCutFr;
-        public static float shortSpecialProfitCutTo;
+        public static double longSpecialProfitCutFr;
+        public static double longSpecialProfitCutTo;
+        public static double shortSpecialProfitCutFr;
+        public static double shortSpecialProfitCutTo;
 
 
 
@@ -271,6 +272,15 @@ namespace KebiraFutures
             textBoxBeginTime.Text =  ConfigurationManager.AppSettings["BeginTime"];
             textBoxEndTime.Text = ConfigurationManager.AppSettings["EndTime"];
 
+            //선물총잔량설정범위
+            textBoxLongQtySumDiffBegin.Text = ConfigurationManager.AppSettings["LongQtySumDiffBegin"];
+            textBoxLongQtySumDiffEnd.Text = ConfigurationManager.AppSettings["LongQtySumDiffEnd"];
+
+            textBoxShortQtySumDiffBegin.Text = ConfigurationManager.AppSettings["ShortQtySumDiffBegin"];
+            textBoxShortQtySumDiffEnd.Text = ConfigurationManager.AppSettings["ShortQtySumDiffEnd"];
+
+
+
             //예상체결범위
             textBoxLongEstimateConclusionRangeBegin.Text = ConfigurationManager.AppSettings["LongEstimatedBegin"];
             textBoxLongEstimateConclusionRangeEnd.Text = ConfigurationManager.AppSettings["LongEstimatedEnd"];
@@ -279,12 +289,7 @@ namespace KebiraFutures
             textBoxShortEstimateConclusionRangeEnd.Text = ConfigurationManager.AppSettings["ShortEstimatedEnd"];
 
 
-            //선물총잔량설정범위
-            textBoxLongQtySumDiffBegin.Text = ConfigurationManager.AppSettings["LongQtySumDiffBegin"];
-            textBoxLongQtySumDiffEnd.Text = ConfigurationManager.AppSettings["LongQtySumDiffEnd"];
 
-            textBoxShortQtySumDiffBegin.Text = ConfigurationManager.AppSettings["ShortQtySumDiffBegin"];
-            textBoxShortQtySumDiffEnd.Text = ConfigurationManager.AppSettings["ShortQtySumDiffEnd"];
 
 
             //진입틱수설정범위
@@ -364,7 +369,12 @@ namespace KebiraFutures
             shortSpecialProfitCutTo = Convert.ToSingle(textBoxShortSpecialProfitCutEnd.Text);
 
 
-
+            t8432 jisuFutures = new t8432();
+            Dictionary<string, string> InputDataTable = new Dictionary<string, string>();
+            InputDataTable.Add("RecCnt", "1");
+            InputDataTable.Add("AcntNo", dataGridView1.Rows[e.RowIndex].Cells["AccNUm"].Value.ToString());
+            InputDataTable.Add("InptPwd", dataGridView1.Rows[e.RowIndex].Cells["Pass"].Value.ToString());
+            jisuFutures.QueryExcute(InputDataTable);
 
 
         }

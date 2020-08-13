@@ -113,6 +113,7 @@
     <Compile Include="QueryClass\CFOAT00200.cs" />
     <Compile Include="QueryClass\CFOAT00300.cs" />
     <Compile Include="QueryClass\t2101.cs" />
+    <Compile Include="QueryClass\t8432.cs" />
     <Compile Include="RealClass\OMG.cs" />
     <Compile Include="RealClass\FC0.cs" />
     <Compile Include="RealClass\OC0.cs" />

@@ -78,6 +78,7 @@
             this.lbl_잔량차이 = new System.Windows.Forms.Label();
             this.lbl_총매도건수 = new System.Windows.Forms.Label();
             this.lbl_총매도잔량 = new System.Windows.Forms.Label();
+            this.listBoxSysMsg = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tlp_호가.SuspendLayout();
@@ -737,12 +738,22 @@
             this.lbl_총매도잔량.TabIndex = 27;
             this.lbl_총매도잔량.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // listBoxSysMsg
+            // 
+            this.listBoxSysMsg.FormattingEnabled = true;
+            this.listBoxSysMsg.ItemHeight = 12;
+            this.listBoxSysMsg.Location = new System.Drawing.Point(4, 404);
+            this.listBoxSysMsg.Name = "listBoxSysMsg";
+            this.listBoxSysMsg.Size = new System.Drawing.Size(281, 16);
+            this.listBoxSysMsg.TabIndex = 24;
+            // 
             // CurrPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(293, 274);
+            this.ClientSize = new System.Drawing.Size(293, 426);
+            this.Controls.Add(this.listBoxSysMsg);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -821,5 +832,6 @@
         private System.Windows.Forms.Label lbl_총매도건수;
         private System.Windows.Forms.Label lbl_총매도잔량;
         private System.Windows.Forms.TableLayoutPanel tlp_호가;
+        private System.Windows.Forms.ListBox listBoxSysMsg;
     }
 }

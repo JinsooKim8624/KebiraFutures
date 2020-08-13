@@ -92,9 +92,14 @@ namespace KebiraFutures
 
         private void btn_매도주문_Click(object sender, EventArgs e)
         {
+            ShortOrder();
+        }
+
+        public void ShortOrder()
+        {
             CFOAT00100 myCFOAT00100 = new CFOAT00100();
-            myCFOAT00100.CallBackMethod+=ReceveData;
-            myCFOAT00100.CallBackMsg+=ReceveMsg;
+            myCFOAT00100.CallBackMethod += ReceveData;
+            myCFOAT00100.CallBackMsg += ReceveMsg;
             Dictionary<string, string> InputDataTable = new Dictionary<string, string>();
             InputDataTable.Add("AcntNo", cmb_AccNum.SelectedItem.ToString());
             InputDataTable.Add("Pwd", txt_Pass.Text.Trim());
@@ -112,9 +117,19 @@ namespace KebiraFutures
             InputDataTable.Add("OrdQty", num_매도수량.Value.ToString());
 
             myCFOAT00100.QueryExcute(InputDataTable);
+
+
         }
 
+
+
+
         private void btn_매수주문_Click(object sender, EventArgs e)
+        {
+            LongOrder();
+        }
+
+        public void LongOrder()
         {
             CFOAT00100 myCFOAT00100 = new CFOAT00100();
             myCFOAT00100.CallBackMethod += ReceveData;
@@ -136,9 +151,17 @@ namespace KebiraFutures
             InputDataTable.Add("OrdQty", num_매수수량.Value.ToString());
 
             myCFOAT00100.QueryExcute(InputDataTable);
+
         }
 
+
+
         private void btn_정정주문_Click(object sender, EventArgs e)
+        {
+            ModifyOrder();
+        }
+
+        public void ModifyOrder()
         {
             CFOAT00200 myCFOAT00200 = new CFOAT00200();
             myCFOAT00200.CallBackMethod += ReceveData;
@@ -148,7 +171,7 @@ namespace KebiraFutures
             InputDataTable.Add("Pwd", txt_Pass.Text.Trim());
             foreach (KeyValuePair<string, List<string>> code in MainForm.종목마스터)
             {
-                if (code.Value[0] == lbl_정정종목.Text.Split(new string[]{","},StringSplitOptions.RemoveEmptyEntries)[0].Trim())
+                if (code.Value[0] == lbl_정정종목.Text.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries)[0].Trim())
                 {
                     InputDataTable.Add("FnoIsuNo", code.Key);
                 }
@@ -160,9 +183,20 @@ namespace KebiraFutures
             InputDataTable.Add("MdfyQty", num_정정수량.Value.ToString());
 
             myCFOAT00200.QueryExcute(InputDataTable);
+
+
         }
 
+
+
+
         private void btn_취소주문_Click(object sender, EventArgs e)
+        {
+            CancelOrder();
+        }
+
+
+        public void CancelOrder()
         {
             CFOAT00300 myCFOAT00300 = new CFOAT00300();
             myCFOAT00300.CallBackMethod += ReceveData;
@@ -182,7 +216,12 @@ namespace KebiraFutures
             InputDataTable.Add("CancQty", num_취소수량.Value.ToString());
 
             myCFOAT00300.QueryExcute(InputDataTable);
+
         }
+
+
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {
