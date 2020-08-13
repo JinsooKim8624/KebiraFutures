@@ -103,6 +103,7 @@
     <Compile Include="OpenOrds.Designer.cs">
       <DependentUpon>OpenOrds.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order.cs" />
     <Compile Include="PriceSelector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,7 +114,8 @@
     <Compile Include="QueryClass\CFOAT00200.cs" />
     <Compile Include="QueryClass\CFOAT00300.cs" />
     <Compile Include="QueryClass\t2101.cs" />
-    <Compile Include="QueryClass\t8432.cs" />
+    <Compile Include="QueryClass\t8416.cs" />
+    <Compile Include="QueryClass\t9943.cs" />
     <Compile Include="RealClass\OMG.cs" />
     <Compile Include="RealClass\FC0.cs" />
     <Compile Include="RealClass\OC0.cs" />
@@ -131,11 +133,11 @@
       <DependentUpon>OptionBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="RealClass\FH0.cs" />
-    <Compile Include="Order.cs">
+    <Compile Include="FormOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Order.Designer.cs">
-      <DependentUpon>Order.cs</DependentUpon>
+    <Compile Include="FormOrder.Designer.cs">
+      <DependentUpon>FormOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="QueryClass\CFOBQ10500.cs" />
     <Compile Include="CurrPosition.cs">
@@ -165,9 +167,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="QueryClass\t0441.cs" />
-    <Compile Include="QueryClass\t9943.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="QueryClass\t9944.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -192,6 +191,7 @@
     <Compile Include="TradeHistory.Designer.cs">
       <DependentUpon>TradeHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util.cs" />
     <EmbeddedResource Include="AccountList.resx">
       <DependentUpon>AccountList.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,8 +225,8 @@
     <EmbeddedResource Include="OptionBoard.resx">
       <DependentUpon>OptionBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order.resx">
-      <DependentUpon>Order.cs</DependentUpon>
+    <EmbeddedResource Include="FormOrder.resx">
+      <DependentUpon>FormOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PriceSelector.resx">
       <DependentUpon>PriceSelector.cs</DependentUpon>

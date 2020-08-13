@@ -1,6 +1,6 @@
 ﻿namespace KebiraFutures
 {
-    partial class Order
+    partial class FormOrder
     {
         /// <summary>
         /// Required designer variable.

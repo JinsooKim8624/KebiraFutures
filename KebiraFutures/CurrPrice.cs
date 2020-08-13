@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using XA_DATASETLib;
@@ -26,9 +27,25 @@ namespace KebiraFutures
         public static bool ShortPosYN = false;
 
 
+
+        Order issueOrder = new Order();
+
+        string actNo;
+        string pwd;
+        string code;
+
         public CurrPrice()
         {
             InitializeComponent();
+
+            
+            foreach (string acc in MainForm.AccList.Keys)
+            {
+                actNo = acc;
+            }
+
+            pwd = MainForm.AccList[actNo][0];
+
 
             myFH0 = new FH0();
             myFC0 = new FC0();
@@ -38,14 +55,21 @@ namespace KebiraFutures
             this.Show();
             MainForm.LoadedForm.Add(this);
 
-            Order myOrder = new Order("매수");
+            //FormOrder myOrder = new FormOrder("매수");
+
+            //List<string, List<string>> acct = MainForm.AccList[0]
+
 
         }
+
+
+
 
         private void btn_종목_Click(object sender, EventArgs e)
         {
             CodeSelector.textbox = txt_종목;
             CodeSelector.Instance.ShowDialog(this);
+
         }
 
         private void txt_종목_TextChanged(object sender, EventArgs e)
@@ -64,6 +88,9 @@ namespace KebiraFutures
                         t2105 myt2105 = new t2105(InputDataTable);
                         myt2105.CallBackMethod = ReceiveData_t2105;
                         myt2105.QueryExcute();
+
+                        code = strCode;
+
                     }
                 }
             }
@@ -260,6 +287,25 @@ namespace KebiraFutures
         }
 
 
+        double longEstimateRangeFr = MainForm.prevDayJongga + MainForm.longEstimatedFr;
+        double longEstimateRangeTo = MainForm.prevDayJongga + MainForm.longEstimatedTo;
+
+        double shortEstimateRangeFr = MainForm.prevDayJongga + MainForm.shortEstimatedFr;
+        double shortEstimateRangeTo = MainForm.prevDayJongga + MainForm.shortEstimatedTo;
+
+
+        double longEnterTickRangeFr = longEnterTickPrice + MainForm.longEstimatedFr;
+        double longEnterTickRangeTo = longEnterTickPrice + MainForm.longEstimatedTo;
+
+        double shortEnterTickRangeFr = MainForm.prevDayJongga + MainForm.shortEstimatedFr;
+        double shortEnterTickRangeTo = MainForm.prevDayJongga + MainForm.shortEstimatedTo;
+
+        static double longEnterTickPrice;
+        static double shortEnterTickPrice;
+
+        static int countOfLongOrder = 1;
+        static int countOfShortOrder = 1;
+
         private void KebiraLogic(string[] strarray)
         {
             lbl_총매도잔량.Text = string.Format("{0:#,#}", int.Parse(strarray[30]));
@@ -275,14 +321,34 @@ namespace KebiraFutures
             if ((string.Compare(MainForm.beginTime, strarray[30]) >= 0) && (string.Compare(MainForm.endTime, strarray[30]) <= 0))
             {
                 lbl_수신시각.Enabled = true;
+
                 //매수로직
                 if (LongPosYN.Equals(true))
                 {
                     //선물 총잔량
                     if ((diff >= MainForm.longQtySumDiffFr) && (diff <= MainForm.longQtySumDiffTo)) //매수
                     {
-                        if ((diff >= MainForm.longQtySumDiffFr) && (diff <= MainForm.longQtySumDiffTo))
+                        //예상체결범위 
+                        if ((currprice >= longEstimateRangeFr) && (currprice <= longEstimateRangeTo))
                         {
+                            //진입틱수
+                            if ((currprice >= longEnterTickRangeFr) && (currprice <= longEnterTickRangeTo))
+                            {
+                                if (countOfLongOrder <= 1)
+                                {
+                                    issueOrder.LongOrder(actNo, pwd, code, (decimal)currprice, 1);
+                                    countOfLongOrder++;
+                                    string msg = String.Format($"{currprice}에 1개 선물 매수");
+                                    Util.WriteSysMsg(msg);
+                                }
+                                else
+                                {
+                                    string msg = String.Format($"{currprice}에 1개 선물 매수 신호 계속 발생..");
+                                    Util.WriteSysMsg(msg);
+
+                                }
+                            }
+
 
                         }
                     }
@@ -424,20 +490,6 @@ namespace KebiraFutures
 
 
 
-        private void WriteSysMsg(string msg)
-        {
-            if (listBoxSysMsg.Items.Count >= 50000)
-            {
-                listBoxSysMsg.Items.RemoveAt(50000);
-
-            }
-            else
-            {
-                listBoxSysMsg.Items.Insert(0, msg);
-
-            }
-
-        }
 
 
     }

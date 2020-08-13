@@ -209,13 +209,28 @@ namespace KebiraFutures
             else if (chegb == "2")
                 미체결만표시();
 
+            int 선물미체결수량 = 0;
+            int 옵션미체결수량 = 0;
+            int 선물체결수량 = 0;
+            int 옵션체결수량 = 0;
+
             if (table.Rows.Count > 0)
             {
+                object futureNotCheQty = table.Compute("Sum(ordrem)", "expcode LIKE '101*'");
+                if (futureNotCheQty != DBNull.Value)
+                    선물미체결수량 = Convert.ToInt32(futureNotCheQty);
 
-                int 선물미체결수량 = Convert.ToInt32(table.Compute("Sum(ordrem)", "expcode LIKE '101*'"));
-                int 옵션미체결수량 = Convert.ToInt32(table.Compute("Sum(ordrem)", "expcode NOT LIKE '101*'"));
-                int 선물체결수량 = Convert.ToInt32(table.Compute("Sum(cheqty)", "expcode LIKE '101*'"));
-                int 옵션체결수량 = Convert.ToInt32(table.Compute("Sum(cheqty)", "expcode NOT LIKE '101*'"));
+                object optionNotCheQty = table.Compute("Sum(ordrem)", "expcode NOT LIKE '101*'");
+                if (optionNotCheQty != DBNull.Value)
+                    옵션미체결수량 = Convert.ToInt32(optionNotCheQty);
+
+                object futureCheQty = table.Compute("Sum(cheqty)", "expcode LIKE '101*'");
+                if (futureCheQty != DBNull.Value)
+                    선물체결수량 = Convert.ToInt32(futureCheQty);                
+
+                object optionCheQty = table.Compute("Sum(cheqty)", "expcode NOT LIKE '101*'");
+                if (optionCheQty != DBNull.Value)
+                    옵션체결수량 = Convert.ToInt32(optionCheQty);
 
                 label5.Text = string.Format("{0:#,0}", 선물미체결수량 + 선물체결수량);
                 label6.Text = string.Format("{0:#,0}", 선물체결수량);

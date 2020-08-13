@@ -127,6 +127,7 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.textBoxPrevDayJongga = new System.Windows.Forms.TextBox();
+            this.listBoxSysMsg = new System.Windows.Forms.ListBox();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -135,7 +136,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 478);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 564);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(562, 22);
             this.statusStrip1.SizingGrip = false;
@@ -867,6 +868,7 @@
             this.checkBoxLong.TabIndex = 69;
             this.checkBoxLong.Text = "매수";
             this.checkBoxLong.UseVisualStyleBackColor = true;
+            this.checkBoxLong.CheckedChanged += new System.EventHandler(this.checkBoxLong_CheckedChanged);
             // 
             // checkBoxShort
             // 
@@ -877,6 +879,7 @@
             this.checkBoxShort.TabIndex = 70;
             this.checkBoxShort.Text = "매도";
             this.checkBoxShort.UseVisualStyleBackColor = true;
+            this.checkBoxShort.CheckedChanged += new System.EventHandler(this.checkBoxShort_CheckedChanged);
             // 
             // textBoxPrevDaySiga
             // 
@@ -942,12 +945,22 @@
             this.textBoxPrevDayJongga.Size = new System.Drawing.Size(57, 21);
             this.textBoxPrevDayJongga.TabIndex = 78;
             // 
+            // listBoxSysMsg
+            // 
+            this.listBoxSysMsg.FormattingEnabled = true;
+            this.listBoxSysMsg.ItemHeight = 12;
+            this.listBoxSysMsg.Location = new System.Drawing.Point(0, 509);
+            this.listBoxSysMsg.Name = "listBoxSysMsg";
+            this.listBoxSysMsg.Size = new System.Drawing.Size(562, 52);
+            this.listBoxSysMsg.TabIndex = 79;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(562, 500);
+            this.ClientSize = new System.Drawing.Size(562, 586);
+            this.Controls.Add(this.listBoxSysMsg);
             this.Controls.Add(this.textBoxPrevDayJongga);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.label40);
@@ -1143,6 +1156,7 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TextBox textBoxPrevDayJongga;
+        private System.Windows.Forms.ListBox listBoxSysMsg;
     }
 }
 

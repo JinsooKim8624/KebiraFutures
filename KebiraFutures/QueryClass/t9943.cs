@@ -39,20 +39,34 @@ namespace KebiraFutures
             {
                 List<string> list = new List<string>();
                 string shcode = myXAQueryClass.GetFieldData("t9943OutBlock", "shcode", i);
-                string yyyy = "";
-                if (shcode.Substring(3, 1) == "H")
-                    yyyy = "2013";
-                else if (shcode.Substring(3, 1) == "J")
-                    yyyy = "2014";
-                else if (shcode.Substring(3, 1) == "K")
-                    yyyy = "2015";
+                string yy = "20";
                 string hname = myXAQueryClass.GetFieldData("t9943OutBlock", "hname", i);
                 list.Add(shcode);
                 list.Add(hname);
-                list.Add(yyyy+hname.Split(new string[]{" "},StringSplitOptions.RemoveEmptyEntries)[1].Replace("월",""));
+                list.Add(yy+hname.Split(new string[]{" "},StringSplitOptions.RemoveEmptyEntries)[1].Replace("월",""));
                 if(!MainForm.종목마스터.ContainsKey(myXAQueryClass.GetFieldData("t9943OutBlock", "expcode", i)))
                     MainForm.종목마스터.Add(myXAQueryClass.GetFieldData("t9943OutBlock", "expcode", i), list);
+                
+                if (i.Equals(0))
+                {
+                    MainForm.futureCode = shcode;
+                }
             }
-        }       
+
+
+            t8416 futureDayCandle = new t8416();
+            Dictionary<string, string> InputDataTable = new Dictionary<string, string>();
+            InputDataTable.Add("shcode", MainForm.futureCode);
+            InputDataTable.Add("gubun", "2");
+            InputDataTable.Add("qrycnt", "5");
+            InputDataTable.Add("sdate", System.DateTime.Now.ToString("yyyyMMdd"));
+            InputDataTable.Add("edate", System.DateTime.Now.AddDays(-10).ToString("yyyyMMdd"));
+            InputDataTable.Add("cts_date", System.DateTime.Now.AddDays(-10).ToString("yyyyMMdd"));
+            InputDataTable.Add("comp_yn", "Y");
+
+            futureDayCandle.QueryExcute(InputDataTable);
+
+
+        }
     }
 }

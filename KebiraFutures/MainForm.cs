@@ -21,6 +21,8 @@ namespace KebiraFutures
         public static SortedDictionary<string, List<string>> 종목마스터 = new SortedDictionary<string, List<string>>(); //<확장코드, <단축코드, 종목명, 만기년월, 상한가, 하한가>>
         public static List<Form> LoadedForm = new List<Form>();//로그인시 열린폼을 닫기위함
 
+        public static string futureCode;
+
         bool 실계좌여부 = false; //모의투자/실계좌 처리방법의 구분을 위함
         
         public MainForm()
@@ -30,6 +32,9 @@ namespace KebiraFutures
             myXASessionClass = new XASessionClass();
             myXASessionClass._IXASessionEvents_Event_Login += new XA_SESSIONLib._IXASessionEvents_LoginEventHandler(myXASessionClass__IXASessionEvents_Event_Login);
             myXASessionClass.Disconnect += new XA_SESSIONLib._IXASessionEvents_DisconnectEventHandler(myXASessionClass_Disconnect);
+
+            Util.listBoxSysMsg = listBoxSysMsg;
+            Util.form = this;
         }
 
         void myXASessionClass_Disconnect()
@@ -62,6 +67,10 @@ namespace KebiraFutures
 
                 t9944 myt9944 = new t9944();
                 myt9944.QueryExcute(new Dictionary<string, string>());
+
+
+
+
 
                 //메뉴항목 활성화
                 거래내역조회ToolStripMenuItem.Enabled = true;
@@ -208,7 +217,7 @@ namespace KebiraFutures
 
         private void mnu_매도주문_Click(object sender, EventArgs e)
         {
-            Order myOrder = new Order(((ToolStripMenuItem)sender).Text.Replace("mnu_", ""));
+            FormOrder myOrder = new FormOrder(((ToolStripMenuItem)sender).Text.Replace("mnu_", ""));
         }
 
         private void 현재가ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -262,6 +271,12 @@ namespace KebiraFutures
         public static double longSpecialProfitCutTo;
         public static double shortSpecialProfitCutFr;
         public static double shortSpecialProfitCutTo;
+
+
+
+        public static double prevDayGoga;
+        public static double prevDayJeoga;
+        public static double prevDayJongga;
 
 
 
@@ -369,13 +384,58 @@ namespace KebiraFutures
             shortSpecialProfitCutTo = Convert.ToSingle(textBoxShortSpecialProfitCutEnd.Text);
 
 
-            t8432 jisuFutures = new t8432();
-            Dictionary<string, string> InputDataTable = new Dictionary<string, string>();
-            InputDataTable.Add("RecCnt", "1");
-            InputDataTable.Add("AcntNo", dataGridView1.Rows[e.RowIndex].Cells["AccNUm"].Value.ToString());
-            InputDataTable.Add("InptPwd", dataGridView1.Rows[e.RowIndex].Cells["Pass"].Value.ToString());
-            jisuFutures.QueryExcute(InputDataTable);
+            //t8432 jisuFutures = new t8432();
+            //Dictionary<string, string> InputDataTable = new Dictionary<string, string>();
+            //InputDataTable.Add("RecCnt", "1");
+            //InputDataTable.Add("AcntNo", dataGridView1.Rows[e.RowIndex].Cells["AccNUm"].Value.ToString());
+            //InputDataTable.Add("InptPwd", dataGridView1.Rows[e.RowIndex].Cells["Pass"].Value.ToString());
+            //jisuFutures.QueryExcute(InputDataTable);
 
+            //textBoxPrevDayGoga.Text = "326.25";
+            //textBoxPrevDayJeoga.Text = "319.26";
+            //textBoxPrevDayJongga.Text = "323.10";
+
+            //prevDayGoga = Convert.ToSingle(textBoxPrevDayGoga.Text);
+            //prevDayJeoga = Convert.ToSingle(textBoxPrevDayJeoga.Text);
+            //prevDayJongga = Convert.ToSingle(textBoxPrevDayJongga.Text);
+
+
+        }
+
+
+
+
+        public void SetTextBoxWithText(string textBoxName, string text)
+        {
+         }
+
+
+
+
+        private void checkBoxLong_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxLong.Checked.Equals(true))
+            {
+                Util.WriteSysMsg("매수로직이 선택되었습니다.");
+            }
+            else if (checkBoxLong.Checked.Equals(false))
+            {
+                Util.WriteSysMsg("매수로직이 취소되었습니다.");
+
+            }
+        }
+
+        private void checkBoxShort_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxShort.Checked.Equals(true))
+            {
+                Util.WriteSysMsg("매도로직이 선택되었습니다.");
+            }
+            else if (checkBoxShort.Checked.Equals(false))
+            {
+                Util.WriteSysMsg("매도로직이 취소되었습니다.");
+
+            }
 
         }
     }
