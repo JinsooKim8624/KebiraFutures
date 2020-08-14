@@ -75,61 +75,29 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBoxLongTickRangeBegin = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBoxShortLossCutEnd = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBoxShortLossCutBegin = new System.Windows.Forms.TextBox();
-            this.textBoxLongLossCutEnd = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBoxLongLossCutBegin = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBoxLongSpecialLossCutEnd = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBoxLongSpecialLossCutBegin = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBoxShortSpecialLossCutEnd = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBoxShortSpecialLossCutBegin = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBoxShortSpecialProfitCutEnd = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.textBoxShortSpecialProfitCutBegin = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.textBoxLongSpecialProfitCutEnd = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.textBoxLongSpecialProfitCutBegin = new System.Windows.Forms.TextBox();
-            this.textBoxShortProfitCutEnd = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.textBoxShortProfitCutBegin = new System.Windows.Forms.TextBox();
-            this.textBoxLongProfitCutEnd = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.textBoxLongProfitCutBegin = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.checkBoxLong = new System.Windows.Forms.CheckBox();
-            this.checkBoxShort = new System.Windows.Forms.CheckBox();
-            this.textBoxPrevDaySiga = new System.Windows.Forms.TextBox();
-            this.textBoxPrevDayGoga = new System.Windows.Forms.TextBox();
-            this.textBoxPrevDayJeoga = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.textBoxPrevDayJongga = new System.Windows.Forms.TextBox();
             this.listBoxSysMsg = new System.Windows.Forms.ListBox();
+            this.gridSetup = new System.Windows.Forms.DataGridView();
+            this.시초가시작 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.시초가끝 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.전일고가시작 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.전일고가끝 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.전일저가시작 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.전일저가끝 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.전일종가시작 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.전일종가끝 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSetup)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -319,7 +287,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 47);
+            this.label1.Location = new System.Drawing.Point(138, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 2;
@@ -327,7 +295,7 @@
             // 
             // textBoxBeginTime
             // 
-            this.textBoxBeginTime.Location = new System.Drawing.Point(216, 44);
+            this.textBoxBeginTime.Location = new System.Drawing.Point(216, 39);
             this.textBoxBeginTime.Name = "textBoxBeginTime";
             this.textBoxBeginTime.Size = new System.Drawing.Size(55, 21);
             this.textBoxBeginTime.TabIndex = 3;
@@ -335,7 +303,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(277, 47);
+            this.label2.Location = new System.Drawing.Point(277, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(14, 12);
             this.label2.TabIndex = 4;
@@ -343,69 +311,76 @@
             // 
             // textBoxEndTime
             // 
-            this.textBoxEndTime.Location = new System.Drawing.Point(307, 44);
+            this.textBoxEndTime.Location = new System.Drawing.Point(307, 39);
             this.textBoxEndTime.Name = "textBoxEndTime";
             this.textBoxEndTime.Size = new System.Drawing.Size(57, 21);
             this.textBoxEndTime.TabIndex = 5;
             // 
             // textBoxLongEstimateConclusionRangeEnd
             // 
-            this.textBoxLongEstimateConclusionRangeEnd.Location = new System.Drawing.Point(307, 143);
+            this.textBoxLongEstimateConclusionRangeEnd.Location = new System.Drawing.Point(490, 453);
             this.textBoxLongEstimateConclusionRangeEnd.Name = "textBoxLongEstimateConclusionRangeEnd";
             this.textBoxLongEstimateConclusionRangeEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxLongEstimateConclusionRangeEnd.TabIndex = 9;
+            this.textBoxLongEstimateConclusionRangeEnd.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(277, 146);
+            this.label3.Location = new System.Drawing.Point(460, 456);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(14, 12);
             this.label3.TabIndex = 8;
             this.label3.Text = "~";
+            this.label3.Visible = false;
             // 
             // textBoxLongEstimateConclusionRangeBegin
             // 
-            this.textBoxLongEstimateConclusionRangeBegin.Location = new System.Drawing.Point(216, 143);
+            this.textBoxLongEstimateConclusionRangeBegin.Location = new System.Drawing.Point(399, 453);
             this.textBoxLongEstimateConclusionRangeBegin.Name = "textBoxLongEstimateConclusionRangeBegin";
             this.textBoxLongEstimateConclusionRangeBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxLongEstimateConclusionRangeBegin.TabIndex = 7;
+            this.textBoxLongEstimateConclusionRangeBegin.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 149);
+            this.label4.Location = new System.Drawing.Point(214, 459);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 12);
             this.label4.TabIndex = 6;
             this.label4.Text = "예상체결점위";
+            this.label4.Visible = false;
             // 
             // textBoxShortEstimateConclusionRangeEnd
             // 
-            this.textBoxShortEstimateConclusionRangeEnd.Location = new System.Drawing.Point(307, 170);
+            this.textBoxShortEstimateConclusionRangeEnd.Location = new System.Drawing.Point(490, 480);
             this.textBoxShortEstimateConclusionRangeEnd.Name = "textBoxShortEstimateConclusionRangeEnd";
             this.textBoxShortEstimateConclusionRangeEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxShortEstimateConclusionRangeEnd.TabIndex = 12;
+            this.textBoxShortEstimateConclusionRangeEnd.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(277, 173);
+            this.label5.Location = new System.Drawing.Point(460, 483);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(14, 12);
             this.label5.TabIndex = 11;
             this.label5.Text = "~";
+            this.label5.Visible = false;
             // 
             // textBoxShortEstimateConclusionRangeBegin
             // 
-            this.textBoxShortEstimateConclusionRangeBegin.Location = new System.Drawing.Point(216, 170);
+            this.textBoxShortEstimateConclusionRangeBegin.Location = new System.Drawing.Point(399, 480);
             this.textBoxShortEstimateConclusionRangeBegin.Name = "textBoxShortEstimateConclusionRangeBegin";
             this.textBoxShortEstimateConclusionRangeBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxShortEstimateConclusionRangeBegin.TabIndex = 10;
+            this.textBoxShortEstimateConclusionRangeBegin.Visible = false;
             // 
             // textBoxShortQtySumDiffEnd
             // 
-            this.textBoxShortQtySumDiffEnd.Location = new System.Drawing.Point(307, 107);
+            this.textBoxShortQtySumDiffEnd.Location = new System.Drawing.Point(288, 353);
             this.textBoxShortQtySumDiffEnd.Name = "textBoxShortQtySumDiffEnd";
             this.textBoxShortQtySumDiffEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxShortQtySumDiffEnd.TabIndex = 19;
@@ -413,7 +388,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(277, 110);
+            this.label6.Location = new System.Drawing.Point(258, 356);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(14, 12);
             this.label6.TabIndex = 18;
@@ -421,14 +396,14 @@
             // 
             // textBoxShortQtySumDiffBegin
             // 
-            this.textBoxShortQtySumDiffBegin.Location = new System.Drawing.Point(216, 107);
+            this.textBoxShortQtySumDiffBegin.Location = new System.Drawing.Point(197, 353);
             this.textBoxShortQtySumDiffBegin.Name = "textBoxShortQtySumDiffBegin";
             this.textBoxShortQtySumDiffBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxShortQtySumDiffBegin.TabIndex = 17;
             // 
             // textBoxLongQtySumDiffEnd
             // 
-            this.textBoxLongQtySumDiffEnd.Location = new System.Drawing.Point(307, 80);
+            this.textBoxLongQtySumDiffEnd.Location = new System.Drawing.Point(288, 326);
             this.textBoxLongQtySumDiffEnd.Name = "textBoxLongQtySumDiffEnd";
             this.textBoxLongQtySumDiffEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxLongQtySumDiffEnd.TabIndex = 16;
@@ -436,7 +411,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(277, 83);
+            this.label7.Location = new System.Drawing.Point(258, 329);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(14, 12);
             this.label7.TabIndex = 15;
@@ -444,7 +419,7 @@
             // 
             // textBoxLongQtySumDiffBegin
             // 
-            this.textBoxLongQtySumDiffBegin.Location = new System.Drawing.Point(216, 80);
+            this.textBoxLongQtySumDiffBegin.Location = new System.Drawing.Point(197, 326);
             this.textBoxLongQtySumDiffBegin.Name = "textBoxLongQtySumDiffBegin";
             this.textBoxLongQtySumDiffBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxLongQtySumDiffBegin.TabIndex = 14;
@@ -452,7 +427,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(31, 80);
+            this.label8.Location = new System.Drawing.Point(12, 326);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(113, 12);
             this.label8.TabIndex = 13;
@@ -460,7 +435,7 @@
             // 
             // textBoxShortTickRangeEnd
             // 
-            this.textBoxShortTickRangeEnd.Location = new System.Drawing.Point(307, 228);
+            this.textBoxShortTickRangeEnd.Location = new System.Drawing.Point(288, 421);
             this.textBoxShortTickRangeEnd.Name = "textBoxShortTickRangeEnd";
             this.textBoxShortTickRangeEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxShortTickRangeEnd.TabIndex = 26;
@@ -468,7 +443,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(277, 231);
+            this.label9.Location = new System.Drawing.Point(258, 424);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(14, 12);
             this.label9.TabIndex = 25;
@@ -476,14 +451,14 @@
             // 
             // textBoxShortTickRangeBegin
             // 
-            this.textBoxShortTickRangeBegin.Location = new System.Drawing.Point(216, 228);
+            this.textBoxShortTickRangeBegin.Location = new System.Drawing.Point(197, 421);
             this.textBoxShortTickRangeBegin.Name = "textBoxShortTickRangeBegin";
             this.textBoxShortTickRangeBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxShortTickRangeBegin.TabIndex = 24;
             // 
             // textBoxLongTickRangeEnd
             // 
-            this.textBoxLongTickRangeEnd.Location = new System.Drawing.Point(307, 201);
+            this.textBoxLongTickRangeEnd.Location = new System.Drawing.Point(288, 394);
             this.textBoxLongTickRangeEnd.Name = "textBoxLongTickRangeEnd";
             this.textBoxLongTickRangeEnd.Size = new System.Drawing.Size(57, 21);
             this.textBoxLongTickRangeEnd.TabIndex = 23;
@@ -491,7 +466,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(277, 204);
+            this.label10.Location = new System.Drawing.Point(258, 397);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(14, 12);
             this.label10.TabIndex = 22;
@@ -499,7 +474,7 @@
             // 
             // textBoxLongTickRangeBegin
             // 
-            this.textBoxLongTickRangeBegin.Location = new System.Drawing.Point(216, 201);
+            this.textBoxLongTickRangeBegin.Location = new System.Drawing.Point(197, 394);
             this.textBoxLongTickRangeBegin.Name = "textBoxLongTickRangeBegin";
             this.textBoxLongTickRangeBegin.Size = new System.Drawing.Size(55, 21);
             this.textBoxLongTickRangeBegin.TabIndex = 21;
@@ -507,112 +482,36 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(31, 207);
+            this.label11.Location = new System.Drawing.Point(12, 400);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(101, 12);
             this.label11.TabIndex = 20;
             this.label11.Text = "진입틱수설정범위";
             // 
-            // textBoxShortLossCutEnd
-            // 
-            this.textBoxShortLossCutEnd.Location = new System.Drawing.Point(307, 282);
-            this.textBoxShortLossCutEnd.Name = "textBoxShortLossCutEnd";
-            this.textBoxShortLossCutEnd.Size = new System.Drawing.Size(57, 21);
-            this.textBoxShortLossCutEnd.TabIndex = 33;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(277, 285);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(14, 12);
-            this.label12.TabIndex = 32;
-            this.label12.Text = "~";
-            // 
-            // textBoxShortLossCutBegin
-            // 
-            this.textBoxShortLossCutBegin.Location = new System.Drawing.Point(216, 282);
-            this.textBoxShortLossCutBegin.Name = "textBoxShortLossCutBegin";
-            this.textBoxShortLossCutBegin.Size = new System.Drawing.Size(55, 21);
-            this.textBoxShortLossCutBegin.TabIndex = 31;
-            // 
-            // textBoxLongLossCutEnd
-            // 
-            this.textBoxLongLossCutEnd.Location = new System.Drawing.Point(307, 255);
-            this.textBoxLongLossCutEnd.Name = "textBoxLongLossCutEnd";
-            this.textBoxLongLossCutEnd.Size = new System.Drawing.Size(57, 21);
-            this.textBoxLongLossCutEnd.TabIndex = 30;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(277, 258);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(14, 12);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "~";
-            // 
-            // textBoxLongLossCutBegin
-            // 
-            this.textBoxLongLossCutBegin.Location = new System.Drawing.Point(216, 255);
-            this.textBoxLongLossCutBegin.Name = "textBoxLongLossCutBegin";
-            this.textBoxLongLossCutBegin.Size = new System.Drawing.Size(55, 21);
-            this.textBoxLongLossCutBegin.TabIndex = 28;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(31, 261);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(53, 12);
-            this.label14.TabIndex = 27;
-            this.label14.Text = "손절라인";
-            // 
-            // textBoxLongSpecialLossCutEnd
-            // 
-            this.textBoxLongSpecialLossCutEnd.Location = new System.Drawing.Point(307, 309);
-            this.textBoxLongSpecialLossCutEnd.Name = "textBoxLongSpecialLossCutEnd";
-            this.textBoxLongSpecialLossCutEnd.Size = new System.Drawing.Size(57, 21);
-            this.textBoxLongSpecialLossCutEnd.TabIndex = 36;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(277, 312);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(14, 12);
-            this.label15.TabIndex = 35;
-            this.label15.Text = "~";
-            // 
-            // textBoxLongSpecialLossCutBegin
-            // 
-            this.textBoxLongSpecialLossCutBegin.Location = new System.Drawing.Point(216, 309);
-            this.textBoxLongSpecialLossCutBegin.Name = "textBoxLongSpecialLossCutBegin";
-            this.textBoxLongSpecialLossCutBegin.Size = new System.Drawing.Size(55, 21);
-            this.textBoxLongSpecialLossCutBegin.TabIndex = 34;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(181, 149);
+            this.label16.Location = new System.Drawing.Point(364, 459);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(29, 12);
             this.label16.TabIndex = 37;
             this.label16.Text = "매수";
+            this.label16.Visible = false;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(181, 173);
+            this.label17.Location = new System.Drawing.Point(364, 483);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(29, 12);
             this.label17.TabIndex = 38;
             this.label17.Text = "매도";
+            this.label17.Visible = false;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(181, 83);
+            this.label18.Location = new System.Drawing.Point(162, 329);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(29, 12);
             this.label18.TabIndex = 39;
@@ -621,7 +520,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(181, 110);
+            this.label19.Location = new System.Drawing.Point(162, 356);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(29, 12);
             this.label19.TabIndex = 40;
@@ -630,7 +529,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(181, 234);
+            this.label20.Location = new System.Drawing.Point(162, 427);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(29, 12);
             this.label20.TabIndex = 42;
@@ -639,311 +538,11 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(181, 207);
+            this.label21.Location = new System.Drawing.Point(162, 400);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(29, 12);
             this.label21.TabIndex = 41;
             this.label21.Text = "매수";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(181, 291);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(29, 12);
-            this.label22.TabIndex = 44;
-            this.label22.Text = "매도";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(181, 264);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(29, 12);
-            this.label23.TabIndex = 43;
-            this.label23.Text = "매수";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(31, 318);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(29, 12);
-            this.label24.TabIndex = 45;
-            this.label24.Text = "특정";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(181, 318);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(29, 12);
-            this.label25.TabIndex = 49;
-            this.label25.Text = "매수";
-            // 
-            // textBoxShortSpecialLossCutEnd
-            // 
-            this.textBoxShortSpecialLossCutEnd.Location = new System.Drawing.Point(307, 336);
-            this.textBoxShortSpecialLossCutEnd.Name = "textBoxShortSpecialLossCutEnd";
-            this.textBoxShortSpecialLossCutEnd.Size = new System.Drawing.Size(57, 21);
-            this.textBoxShortSpecialLossCutEnd.TabIndex = 48;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(277, 339);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(14, 12);
-            this.label26.TabIndex = 47;
-            this.label26.Text = "~";
-            // 
-            // textBoxShortSpecialLossCutBegin
-            // 
-            this.textBoxShortSpecialLossCutBegin.Location = new System.Drawing.Point(216, 336);
-            this.textBoxShortSpecialLossCutBegin.Name = "textBoxShortSpecialLossCutBegin";
-            this.textBoxShortSpecialLossCutBegin.Size = new System.Drawing.Size(55, 21);
-            this.textBoxShortSpecialLossCutBegin.TabIndex = 46;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(181, 339);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(29, 12);
-            this.label27.TabIndex = 50;
-            this.label27.Text = "매도";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(181, 448);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(29, 12);
-            this.label28.TabIndex = 68;
-            this.label28.Text = "매도";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(181, 427);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(29, 12);
-            this.label29.TabIndex = 67;
-            this.label29.Text = "매수";
-            // 
-            // textBoxShortSpecialProfitCutEnd
-            // 
-            this.textBoxShortSpecialProfitCutEnd.Location = new System.Drawing.Point(307, 445);
-            this.textBoxShortSpecialProfitCutEnd.Name = "textBoxShortSpecialProfitCutEnd";
-            this.textBoxShortSpecialProfitCutEnd.Size = new System.Drawing.Size(57, 21);
-            this.textBoxShortSpecialProfitCutEnd.TabIndex = 66;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(277, 448);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(14, 12);
-            this.label30.TabIndex = 65;
-            this.label30.Text = "~";
-            // 
-            // textBoxShortSpecialProfitCutBegin
-            // 
-            this.textBoxShortSpecialProfitCutBegin.Location = new System.Drawing.Point(216, 445);
-            this.textBoxShortSpecialProfitCutBegin.Name = "textBoxShortSpecialProfitCutBegin";
-            this.textBoxShortSpecialProfitCutBegin.Size = new System.Drawing.Size(55, 21);
-            this.textBoxShortSpecialProfitCutBegin.TabIndex = 64;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(31, 427);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(29, 12);
-            this.label31.TabIndex = 63;
-            this.label31.Text = "특정";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(181, 400);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(29, 12);
-            this.label32.TabIndex = 62;
-            this.label32.Text = "매도";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(181, 373);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(29, 12);
-            this.label33.TabIndex = 61;
-            this.label33.Text = "매수";
-            // 
-            // textBoxLongSpecialProfitCutEnd
-            // 
-            this.textBoxLongSpecialProfitCutEnd.Location = new System.Drawing.Point(307, 418);
-            this.textBoxLongSpecialProfitCutEnd.Name = "textBoxLongSpecialProfitCutEnd";
-            this.textBoxLongSpecialProfitCutEnd.Size = new System.Drawing.Size(57, 21);
-            this.textBoxLongSpecialProfitCutEnd.TabIndex = 60;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(277, 421);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(14, 12);
-            this.label34.TabIndex = 59;
-            this.label34.Text = "~";
-            // 
-            // textBoxLongSpecialProfitCutBegin
-            // 
-            this.textBoxLongSpecialProfitCutBegin.Location = new System.Drawing.Point(216, 418);
-            this.textBoxLongSpecialProfitCutBegin.Name = "textBoxLongSpecialProfitCutBegin";
-            this.textBoxLongSpecialProfitCutBegin.Size = new System.Drawing.Size(55, 21);
-            this.textBoxLongSpecialProfitCutBegin.TabIndex = 58;
-            // 
-            // textBoxShortProfitCutEnd
-            // 
-            this.textBoxShortProfitCutEnd.Location = new System.Drawing.Point(307, 391);
-            this.textBoxShortProfitCutEnd.Name = "textBoxShortProfitCutEnd";
-            this.textBoxShortProfitCutEnd.Size = new System.Drawing.Size(57, 21);
-            this.textBoxShortProfitCutEnd.TabIndex = 57;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(277, 394);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(14, 12);
-            this.label35.TabIndex = 56;
-            this.label35.Text = "~";
-            // 
-            // textBoxShortProfitCutBegin
-            // 
-            this.textBoxShortProfitCutBegin.Location = new System.Drawing.Point(216, 391);
-            this.textBoxShortProfitCutBegin.Name = "textBoxShortProfitCutBegin";
-            this.textBoxShortProfitCutBegin.Size = new System.Drawing.Size(55, 21);
-            this.textBoxShortProfitCutBegin.TabIndex = 55;
-            // 
-            // textBoxLongProfitCutEnd
-            // 
-            this.textBoxLongProfitCutEnd.Location = new System.Drawing.Point(307, 364);
-            this.textBoxLongProfitCutEnd.Name = "textBoxLongProfitCutEnd";
-            this.textBoxLongProfitCutEnd.Size = new System.Drawing.Size(57, 21);
-            this.textBoxLongProfitCutEnd.TabIndex = 54;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(277, 367);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(14, 12);
-            this.label36.TabIndex = 53;
-            this.label36.Text = "~";
-            // 
-            // textBoxLongProfitCutBegin
-            // 
-            this.textBoxLongProfitCutBegin.Location = new System.Drawing.Point(216, 364);
-            this.textBoxLongProfitCutBegin.Name = "textBoxLongProfitCutBegin";
-            this.textBoxLongProfitCutBegin.Size = new System.Drawing.Size(55, 21);
-            this.textBoxLongProfitCutBegin.TabIndex = 52;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(31, 370);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(53, 12);
-            this.label37.TabIndex = 51;
-            this.label37.Text = "익절라인";
-            // 
-            // checkBoxLong
-            // 
-            this.checkBoxLong.AutoSize = true;
-            this.checkBoxLong.Location = new System.Drawing.Point(415, 43);
-            this.checkBoxLong.Name = "checkBoxLong";
-            this.checkBoxLong.Size = new System.Drawing.Size(48, 16);
-            this.checkBoxLong.TabIndex = 69;
-            this.checkBoxLong.Text = "매수";
-            this.checkBoxLong.UseVisualStyleBackColor = true;
-            this.checkBoxLong.CheckedChanged += new System.EventHandler(this.checkBoxLong_CheckedChanged);
-            // 
-            // checkBoxShort
-            // 
-            this.checkBoxShort.AutoSize = true;
-            this.checkBoxShort.Location = new System.Drawing.Point(469, 43);
-            this.checkBoxShort.Name = "checkBoxShort";
-            this.checkBoxShort.Size = new System.Drawing.Size(48, 16);
-            this.checkBoxShort.TabIndex = 70;
-            this.checkBoxShort.Text = "매도";
-            this.checkBoxShort.UseVisualStyleBackColor = true;
-            this.checkBoxShort.CheckedChanged += new System.EventHandler(this.checkBoxShort_CheckedChanged);
-            // 
-            // textBoxPrevDaySiga
-            // 
-            this.textBoxPrevDaySiga.Location = new System.Drawing.Point(469, 77);
-            this.textBoxPrevDaySiga.Name = "textBoxPrevDaySiga";
-            this.textBoxPrevDaySiga.Size = new System.Drawing.Size(57, 21);
-            this.textBoxPrevDaySiga.TabIndex = 71;
-            // 
-            // textBoxPrevDayGoga
-            // 
-            this.textBoxPrevDayGoga.Location = new System.Drawing.Point(469, 110);
-            this.textBoxPrevDayGoga.Name = "textBoxPrevDayGoga";
-            this.textBoxPrevDayGoga.Size = new System.Drawing.Size(57, 21);
-            this.textBoxPrevDayGoga.TabIndex = 72;
-            // 
-            // textBoxPrevDayJeoga
-            // 
-            this.textBoxPrevDayJeoga.Location = new System.Drawing.Point(469, 143);
-            this.textBoxPrevDayJeoga.Name = "textBoxPrevDayJeoga";
-            this.textBoxPrevDayJeoga.Size = new System.Drawing.Size(57, 21);
-            this.textBoxPrevDayJeoga.TabIndex = 73;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(386, 83);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(53, 12);
-            this.label38.TabIndex = 74;
-            this.label38.Text = "전일시가";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(386, 116);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(53, 12);
-            this.label39.TabIndex = 75;
-            this.label39.Text = "전일고가";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(386, 149);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(53, 12);
-            this.label40.TabIndex = 76;
-            this.label40.Text = "전일저가";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(386, 179);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(53, 12);
-            this.label41.TabIndex = 77;
-            this.label41.Text = "전일종가";
-            // 
-            // textBoxPrevDayJongga
-            // 
-            this.textBoxPrevDayJongga.Location = new System.Drawing.Point(469, 179);
-            this.textBoxPrevDayJongga.Name = "textBoxPrevDayJongga";
-            this.textBoxPrevDayJongga.Size = new System.Drawing.Size(57, 21);
-            this.textBoxPrevDayJongga.TabIndex = 78;
             // 
             // listBoxSysMsg
             // 
@@ -954,65 +553,123 @@
             this.listBoxSysMsg.Size = new System.Drawing.Size(562, 52);
             this.listBoxSysMsg.TabIndex = 79;
             // 
+            // gridSetup
+            // 
+            this.gridSetup.AllowUserToAddRows = false;
+            this.gridSetup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridSetup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.시초가시작,
+            this.시초가끝,
+            this.전일고가시작,
+            this.전일고가끝,
+            this.전일저가시작,
+            this.전일저가끝,
+            this.전일종가시작,
+            this.전일종가끝});
+            this.gridSetup.Location = new System.Drawing.Point(0, 104);
+            this.gridSetup.Name = "gridSetup";
+            this.gridSetup.RowTemplate.Height = 23;
+            this.gridSetup.Size = new System.Drawing.Size(562, 194);
+            this.gridSetup.TabIndex = 80;
+            // 
+            // 시초가시작
+            // 
+            this.시초가시작.HeaderText = "시초가시작";
+            this.시초가시작.Name = "시초가시작";
+            this.시초가시작.Width = 50;
+            // 
+            // 시초가끝
+            // 
+            this.시초가끝.HeaderText = "시초가끝";
+            this.시초가끝.Name = "시초가끝";
+            this.시초가끝.Width = 50;
+            // 
+            // 전일고가시작
+            // 
+            this.전일고가시작.HeaderText = "전일고가시작";
+            this.전일고가시작.Name = "전일고가시작";
+            this.전일고가시작.Width = 50;
+            // 
+            // 전일고가끝
+            // 
+            this.전일고가끝.HeaderText = "전일고가끝";
+            this.전일고가끝.Name = "전일고가끝";
+            this.전일고가끝.Width = 50;
+            // 
+            // 전일저가시작
+            // 
+            this.전일저가시작.HeaderText = "전일저가시작";
+            this.전일저가시작.Name = "전일저가시작";
+            this.전일저가시작.Width = 50;
+            // 
+            // 전일저가끝
+            // 
+            this.전일저가끝.HeaderText = "전일저가끝";
+            this.전일저가끝.Name = "전일저가끝";
+            this.전일저가끝.Width = 50;
+            // 
+            // 전일종가시작
+            // 
+            this.전일종가시작.HeaderText = "전일종가시작";
+            this.전일종가시작.Name = "전일종가시작";
+            this.전일종가시작.Width = 50;
+            // 
+            // 전일종가끝
+            // 
+            this.전일종가끝.HeaderText = "전일종가끝";
+            this.전일종가끝.Name = "전일종가끝";
+            this.전일종가끝.Width = 50;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(490, 68);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(57, 21);
+            this.textBox1.TabIndex = 83;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(460, 71);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(14, 12);
+            this.label12.TabIndex = 82;
+            this.label12.Text = "~";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(399, 68);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(55, 21);
+            this.textBox2.TabIndex = 81;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(286, 77);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(93, 12);
+            this.label13.TabIndex = 84;
+            this.label13.Text = "시초가 시간설정";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(562, 586);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.gridSetup);
             this.Controls.Add(this.listBoxSysMsg);
-            this.Controls.Add(this.textBoxPrevDayJongga);
-            this.Controls.Add(this.label41);
-            this.Controls.Add(this.label40);
-            this.Controls.Add(this.label39);
-            this.Controls.Add(this.label38);
-            this.Controls.Add(this.textBoxPrevDayJeoga);
-            this.Controls.Add(this.textBoxPrevDayGoga);
-            this.Controls.Add(this.textBoxPrevDaySiga);
-            this.Controls.Add(this.checkBoxShort);
-            this.Controls.Add(this.checkBoxLong);
-            this.Controls.Add(this.label28);
-            this.Controls.Add(this.label29);
-            this.Controls.Add(this.textBoxShortSpecialProfitCutEnd);
-            this.Controls.Add(this.label30);
-            this.Controls.Add(this.textBoxShortSpecialProfitCutBegin);
-            this.Controls.Add(this.label31);
-            this.Controls.Add(this.label32);
-            this.Controls.Add(this.label33);
-            this.Controls.Add(this.textBoxLongSpecialProfitCutEnd);
-            this.Controls.Add(this.label34);
-            this.Controls.Add(this.textBoxLongSpecialProfitCutBegin);
-            this.Controls.Add(this.textBoxShortProfitCutEnd);
-            this.Controls.Add(this.label35);
-            this.Controls.Add(this.textBoxShortProfitCutBegin);
-            this.Controls.Add(this.textBoxLongProfitCutEnd);
-            this.Controls.Add(this.label36);
-            this.Controls.Add(this.textBoxLongProfitCutBegin);
-            this.Controls.Add(this.label37);
-            this.Controls.Add(this.label27);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.textBoxShortSpecialLossCutEnd);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.textBoxShortSpecialLossCutBegin);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.label23);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBoxLongSpecialLossCutEnd);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBoxLongSpecialLossCutBegin);
-            this.Controls.Add(this.textBoxShortLossCutEnd);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBoxShortLossCutBegin);
-            this.Controls.Add(this.textBoxLongLossCutEnd);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBoxLongLossCutBegin);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.textBoxShortTickRangeEnd);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxShortTickRangeBegin);
@@ -1050,6 +707,7 @@
             this.statusStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSetup)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1104,59 +762,26 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxLongTickRangeBegin;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBoxShortLossCutEnd;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBoxShortLossCutBegin;
-        private System.Windows.Forms.TextBox textBoxLongLossCutEnd;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBoxLongLossCutBegin;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBoxLongSpecialLossCutEnd;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBoxLongSpecialLossCutBegin;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBoxShortSpecialLossCutEnd;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBoxShortSpecialLossCutBegin;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBoxShortSpecialProfitCutEnd;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBoxShortSpecialProfitCutBegin;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox textBoxLongSpecialProfitCutEnd;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox textBoxLongSpecialProfitCutBegin;
-        private System.Windows.Forms.TextBox textBoxShortProfitCutEnd;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox textBoxShortProfitCutBegin;
-        private System.Windows.Forms.TextBox textBoxLongProfitCutEnd;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBoxLongProfitCutBegin;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.CheckBox checkBoxLong;
-        private System.Windows.Forms.CheckBox checkBoxShort;
-        private System.Windows.Forms.TextBox textBoxPrevDaySiga;
-        private System.Windows.Forms.TextBox textBoxPrevDayGoga;
-        private System.Windows.Forms.TextBox textBoxPrevDayJeoga;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox textBoxPrevDayJongga;
         private System.Windows.Forms.ListBox listBoxSysMsg;
+        private System.Windows.Forms.DataGridView gridSetup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 시초가시작;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 시초가끝;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 전일고가시작;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 전일고가끝;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 전일저가시작;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 전일저가끝;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 전일종가시작;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 전일종가끝;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label13;
     }
 }
 

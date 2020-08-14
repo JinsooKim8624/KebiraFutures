@@ -456,28 +456,28 @@ namespace KebiraFutures
             lbl_총매수잔량.Text = string.Format("{0:#,#}", int.Parse(strarray[31]));
             lbl_총매도건수.Text = string.Format("{0:#,#}", int.Parse(strarray[32]));
             lbl_총매수건수.Text = string.Format("{0:#,#}", int.Parse(strarray[33]));
-
-            lbl_수신시각.Text = string.Format("{0:0#:##:##}", int.Parse(strarray[34]));
-            lbl_잔량차이.Text = string.Format("{0:#,#}", int.Parse(strarray[31]) - int.Parse(strarray[30]));
-            int diff = int.Parse(strarray[31]) - int.Parse(strarray[30]);
-            if (diff > 0)
+            if (strarray[34] != string.Empty)
             {
+                lbl_수신시각.Text = string.Format("{0:0#:##:##}", int.Parse(strarray[34]));
+                lbl_잔량차이.Text = string.Format("{0:#,#}", int.Parse(strarray[31]) - int.Parse(strarray[30]));
+                int diff = int.Parse(strarray[31]) - int.Parse(strarray[30]);
+                if (diff > 0)
+                {
 
-                lbl_잔량차이.ForeColor = Color.Red;
+                    lbl_잔량차이.ForeColor = Color.Red;
+                }
+                else if (diff < 0)
+                {
+                    lbl_잔량차이.ForeColor = Color.Blue;
+
+                }
+                else
+                {
+                    lbl_잔량차이.ForeColor = Color.Black;
+                }
+
+                CurrPriceUpdate();
             }
-            else if (diff < 0)
-            {
-                lbl_잔량차이.ForeColor = Color.Blue;
-
-            }
-            else
-            {
-                lbl_잔량차이.ForeColor = Color.Black;
-            }
-
-
-
-            CurrPriceUpdate();
         }
 
 
@@ -488,9 +488,10 @@ namespace KebiraFutures
             MainForm.LoadedForm.Remove(this);
         }
 
-
-
-
-
+        private void CurrPrice_Load(object sender, EventArgs e)
+        {
+            txt_종목.Text = MainForm.futureCode;
+            txt_종목_TextChanged(null, null);
+        }
     }
 }

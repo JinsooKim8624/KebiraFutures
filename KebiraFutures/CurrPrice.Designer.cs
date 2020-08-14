@@ -78,14 +78,30 @@
             this.lbl_잔량차이 = new System.Windows.Forms.Label();
             this.lbl_총매도건수 = new System.Windows.Forms.Label();
             this.lbl_총매도잔량 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.textBoxTodaySiga = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.textBoxPrevDayJongga = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.textBoxPrevDayJeoga = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBoxPrevDayGoga = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tlp_호가.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_종목
@@ -741,48 +757,172 @@
             this.lbl_총매도잔량.TabIndex = 27;
             this.lbl_총매도잔량.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label3
+            // groupBox4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 322);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 12);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "메도진입틱 가격";
+            this.groupBox4.Controls.Add(this.checkBox7);
+            this.groupBox4.Controls.Add(this.checkBox8);
+            this.groupBox4.Controls.Add(this.textBoxTodaySiga);
+            this.groupBox4.Location = new System.Drawing.Point(12, 276);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(80, 102);
+            this.groupBox4.TabIndex = 87;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "금일시초가";
             // 
-            // label6
+            // checkBox7
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 298);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 12);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "매수진입틱 가격";
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(7, 73);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(48, 16);
+            this.checkBox7.TabIndex = 74;
+            this.checkBox7.Text = "매도";
+            this.checkBox7.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // checkBox8
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 289);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(56, 21);
-            this.textBox1.TabIndex = 26;
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(7, 51);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(48, 16);
+            this.checkBox8.TabIndex = 73;
+            this.checkBox8.Text = "매수";
+            this.checkBox8.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // textBoxTodaySiga
             // 
-            this.textBox2.Location = new System.Drawing.Point(110, 316);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(56, 21);
-            this.textBox2.TabIndex = 27;
+            this.textBoxTodaySiga.Location = new System.Drawing.Point(7, 20);
+            this.textBoxTodaySiga.Name = "textBoxTodaySiga";
+            this.textBoxTodaySiga.Size = new System.Drawing.Size(48, 21);
+            this.textBoxTodaySiga.TabIndex = 72;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.checkBox5);
+            this.groupBox3.Controls.Add(this.checkBox6);
+            this.groupBox3.Controls.Add(this.textBoxPrevDayJongga);
+            this.groupBox3.Location = new System.Drawing.Point(196, 409);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(80, 102);
+            this.groupBox3.TabIndex = 86;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "전일종가";
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(7, 73);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(48, 16);
+            this.checkBox5.TabIndex = 74;
+            this.checkBox5.Text = "매도";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(7, 51);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(48, 16);
+            this.checkBox6.TabIndex = 73;
+            this.checkBox6.Text = "매수";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // textBoxPrevDayJongga
+            // 
+            this.textBoxPrevDayJongga.Location = new System.Drawing.Point(7, 20);
+            this.textBoxPrevDayJongga.Name = "textBoxPrevDayJongga";
+            this.textBoxPrevDayJongga.Size = new System.Drawing.Size(48, 21);
+            this.textBoxPrevDayJongga.TabIndex = 78;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.checkBox3);
+            this.groupBox2.Controls.Add(this.checkBox4);
+            this.groupBox2.Controls.Add(this.textBoxPrevDayJeoga);
+            this.groupBox2.Location = new System.Drawing.Point(100, 409);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(80, 102);
+            this.groupBox2.TabIndex = 85;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "전일저가";
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(7, 73);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(48, 16);
+            this.checkBox3.TabIndex = 74;
+            this.checkBox3.Text = "매도";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(7, 51);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(48, 16);
+            this.checkBox4.TabIndex = 73;
+            this.checkBox4.Text = "매수";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // textBoxPrevDayJeoga
+            // 
+            this.textBoxPrevDayJeoga.Location = new System.Drawing.Point(6, 20);
+            this.textBoxPrevDayJeoga.Name = "textBoxPrevDayJeoga";
+            this.textBoxPrevDayJeoga.Size = new System.Drawing.Size(49, 21);
+            this.textBoxPrevDayJeoga.TabIndex = 73;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkBox2);
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.textBoxPrevDayGoga);
+            this.groupBox1.Location = new System.Drawing.Point(12, 409);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(80, 102);
+            this.groupBox1.TabIndex = 84;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "전일고가";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(7, 73);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(48, 16);
+            this.checkBox2.TabIndex = 74;
+            this.checkBox2.Text = "매도";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(7, 51);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(48, 16);
+            this.checkBox1.TabIndex = 73;
+            this.checkBox1.Text = "매수";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // textBoxPrevDayGoga
+            // 
+            this.textBoxPrevDayGoga.Location = new System.Drawing.Point(7, 20);
+            this.textBoxPrevDayGoga.Name = "textBoxPrevDayGoga";
+            this.textBoxPrevDayGoga.Size = new System.Drawing.Size(48, 21);
+            this.textBoxPrevDayGoga.TabIndex = 72;
             // 
             // CurrPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(293, 426);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(289, 578);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -796,6 +936,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "현재가 조회";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CurrPrice_FormClosing);
+            this.Load += new System.EventHandler(this.CurrPrice_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -804,6 +945,14 @@
             this.tlp_호가.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -861,9 +1010,21 @@
         private System.Windows.Forms.Label lbl_총매도건수;
         private System.Windows.Forms.Label lbl_총매도잔량;
         private System.Windows.Forms.TableLayoutPanel tlp_호가;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.TextBox textBoxTodaySiga;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.TextBox textBoxPrevDayJongga;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.TextBox textBoxPrevDayJeoga;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBoxPrevDayGoga;
     }
 }

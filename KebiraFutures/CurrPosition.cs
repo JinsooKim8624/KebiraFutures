@@ -8,19 +8,23 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using XA_DATASETLib;
+using System.Configuration;
 
 namespace KebiraFutures
 {
     public partial class CurrPosition : Form
     {
-        enum ColumnName { expcode, medosu, jqty, pamt, price, appamt, dtsunik1, sunikrt };
-        enum ColumnText { 종목명, 구분, 잔고, 평균단가, 현재가, 평가금액, 평가손익, 손익율 };
+        enum ColumnName { expcode, medosu, jqty, pamt, price, diff, appamt, dtsunik1, sunikrt };
+        enum ColumnText { 종목명, 구분, 잔고, 평균단가, 현재가, 차이, 평가금액, 평가손익, 손익율 };
         DataTable table;
         C01 myC01;
         FC0 myFC0;
         OC0 myOC0;
 
         double 매매손익 = 0d;
+
+        double multiplier = 250000d;
+
 
         public CurrPosition()
         {
@@ -54,26 +58,47 @@ namespace KebiraFutures
             table.Columns["jqty"].DataType = typeof(double);
             table.Columns["pamt"].DataType = typeof(double);
             table.Columns["price"].DataType = typeof(double);
+            //table.Columns["diff"].DataType = typeof(double);
             table.Columns["appamt"].DataType = typeof(double);
             table.Columns["dtsunik1"].DataType = typeof(double);
             table.Columns["sunikrt"].DataType = typeof(double);
 
             dataGridView1.Columns["expcode"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView1.Columns["medosu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //
             dataGridView1.Columns["jqty"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.Columns["jqty"].DefaultCellStyle.Format = "#,0";
+            //
             dataGridView1.Columns["pamt"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.Columns["pamt"].DefaultCellStyle.Format = "0.00";
+            //
             dataGridView1.Columns["price"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.Columns["price"].DefaultCellStyle.Format = "0.00";
+
+            dataGridView1.Columns["diff"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridView1.Columns["diff"].DefaultCellStyle.Format = "0.#0";
+            //
             dataGridView1.Columns["appamt"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.Columns["appamt"].DefaultCellStyle.Format = "#,0";
+            //
             dataGridView1.Columns["dtsunik1"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.Columns["dtsunik1"].DefaultCellStyle.Format = "#,0";
+            //
             dataGridView1.Columns["sunikrt"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.Columns["sunikrt"].DefaultCellStyle.Format = "#.#0";
+            // 
 
             this.Show();
+            dataGridView1.Columns["expcode"].Width = 80;
+            dataGridView1.Columns["medosu"].Width = 40;
+            dataGridView1.Columns["jqty"].Width = 30;
+            dataGridView1.Columns["pamt"].Width = 30;
+            dataGridView1.Columns["price"].Width = 30;
+            dataGridView1.Columns["diff"].Width = 30;
+            dataGridView1.Columns["appamt"].Width = 80;
+            dataGridView1.Columns["dtsunik1"].Width = 80;
+            dataGridView1.Columns["sunikrt"].Width = 80;
+
             MainForm.LoadedForm.Add(this);
         }
 
@@ -214,18 +239,22 @@ namespace KebiraFutures
                     if ((double)row["price"] != 현재가)//현재가가 바뀔때만.
                     {
                         row["price"] = 현재가;
-                        row["appamt"] = (double)row["jqty"] * 현재가 * 500000d;// 선/옵 모두 승수는 1Pt.당 500000원 임.
+                        row["appamt"] = (double)row["jqty"] * 현재가 * multiplier;// 선/옵 모두 승수는 1Pt.당 250000원 임.
 
                         if (row["medosu"].ToString() == "매도")
                         {
-                            row["dtsunik1"] = 500000d * (double)row["jqty"] * ((double)row["pamt"] - 현재가);
+                            row["dtsunik1"] = multiplier * (double)row["jqty"] * ((double)row["pamt"] - 현재가);
+                            row["diff"] = (double)row["pamt"] - 현재가; 
                             row["sunikrt"] = 100d * ((double)row["pamt"] - 현재가) / (double)row["pamt"];
                         }
                         else
                         {
-                            row["dtsunik1"] = 500000d * (double)row["jqty"] * (현재가 - (double)row["pamt"]);
+                            row["dtsunik1"] = multiplier * (double)row["jqty"] * (현재가 - (double)row["pamt"]);
+                            row["diff"] = 현재가 - (double)row["pamt"];
                             row["sunikrt"] = 100d * (현재가 - (double)row["pamt"]) / (double)row["pamt"];
                         }
+
+                        
 
                         총손익계산();
                     }
@@ -233,6 +262,32 @@ namespace KebiraFutures
                 }
             }
         }
+
+
+
+
+        private void KebiraLogic()
+        {
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void ReceveRealData_C01(XARealClass myXARealClass)
         {
@@ -268,11 +323,11 @@ namespace KebiraFutures
                     //실현손익계산
                     if (구분 == "매도")
                     {
-                        매매손익 += Math.Min(잔고, chevol) * (평균단가 - cheprice) * 500000d;
+                        매매손익 += Math.Min(잔고, chevol) * (평균단가 - cheprice) * multiplier;
                     }
                     else
                     {
-                        매매손익 += Math.Min(잔고, chevol) * (cheprice - 평균단가) * 500000d;
+                        매매손익 += Math.Min(잔고, chevol) * (cheprice - 평균단가) * multiplier;
                     }
 
                     if (dosugb == 구분)//잔고추가(진입)
@@ -311,7 +366,7 @@ namespace KebiraFutures
                 newrow["jqty"] = chevol.ToString();
                 newrow["pamt"] = cheprice.ToString();
                 newrow["price"] = cheprice.ToString();
-                newrow["appamt"] = chevol * cheprice * 500000d;
+                newrow["appamt"] = chevol * cheprice * multiplier;
                 newrow["dtsunik1"] = "0";
                 newrow["sunikrt"] = "0";
                 table.Rows.Add(newrow);
@@ -355,6 +410,110 @@ namespace KebiraFutures
         {
             Real해제();
             MainForm.LoadedForm.Remove(this);
+        }
+
+
+
+        static bool lossCutBasicYN = true;
+        static bool lossCutSpecialYN = true;
+
+        static bool profitCutBasicYN = true;
+        static bool profitCutSpecialYN = true;
+
+
+        public static double longLossCutFr;
+        public static double longLossCutTo;
+        public static double shortLossCutFr;
+        public static double shortLossCutTo;
+
+        public static double longSpecialLossCutFr;
+        public static double longSpecialLossCutTo;
+        public static double shortSpecialLossCutFr;
+        public static double shortSpecialLossCutTo;
+
+
+        public static double longProfitCutFr;
+        public static double longProfitCutTo;
+        public static double shortProfitCutFr;
+        public static double shortProfitCutTo;
+
+        public static double longSpecialProfitCutFr;
+        public static double longSpecialProfitCutTo;
+        public static double shortSpecialProfitCutFr;
+        public static double shortSpecialProfitCutTo;
+
+
+        private void CurrPosition_Load(object sender, EventArgs e)
+        {
+            textBoxLongLossCutBegin.Text = ConfigurationManager.AppSettings["LongLossCutBegin"];
+            textBoxLongLossCutEnd.Text = ConfigurationManager.AppSettings["LongLossCutEnd"];
+
+            textBoxShortLossCutBegin.Text = ConfigurationManager.AppSettings["ShortLossCutBegin"];
+            textBoxShortLossCutEnd.Text = ConfigurationManager.AppSettings["ShortLossCutEnd"];
+
+            //손절라인_특정
+            textBoxLongSpecialLossCutBegin.Text = ConfigurationManager.AppSettings["LongSpecialLossCutBegin"];
+            textBoxLongSpecialLossCutEnd.Text = ConfigurationManager.AppSettings["LongSpecialLossCutEnd"];
+
+            textBoxShortSpecialLossCutBegin.Text = ConfigurationManager.AppSettings["ShortSpecialLossCutBegin"];
+            textBoxShortSpecialLossCutEnd.Text = ConfigurationManager.AppSettings["ShortSpecialLossCutEnd"];
+
+
+            //익절라인
+            textBoxLongProfitCutBegin.Text = ConfigurationManager.AppSettings["LongProfitCutBegin"];
+            textBoxLongProfitCutEnd.Text = ConfigurationManager.AppSettings["LongProfitCutEnd"];
+
+            textBoxShortProfitCutBegin.Text = ConfigurationManager.AppSettings["ShortProfitCutBegin"];
+            textBoxShortProfitCutEnd.Text = ConfigurationManager.AppSettings["ShortProfitCutEnd"];
+
+            //익절라인_특정
+            textBoxLongSpecialProfitCutBegin.Text = ConfigurationManager.AppSettings["LongSpecialProfitCutBegin"];
+            textBoxLongSpecialProfitCutEnd.Text = ConfigurationManager.AppSettings["LongSpecialProfitCutEnd"];
+
+            textBoxShortSpecialProfitCutBegin.Text = ConfigurationManager.AppSettings["ShortSpecialProfitCutBegin"];
+            textBoxShortSpecialProfitCutEnd.Text = ConfigurationManager.AppSettings["ShortSpecialProfitCutEnd"];
+
+
+            longLossCutFr = Convert.ToSingle(textBoxLongLossCutBegin.Text);
+            longLossCutTo = Convert.ToSingle(textBoxLongLossCutEnd.Text);
+            shortLossCutFr = Convert.ToSingle(textBoxShortLossCutBegin.Text);
+            shortLossCutTo = Convert.ToSingle(textBoxShortLossCutEnd.Text);
+
+            longSpecialLossCutFr = Convert.ToSingle(textBoxLongSpecialLossCutBegin.Text);
+            longSpecialLossCutTo = Convert.ToSingle(textBoxLongSpecialLossCutEnd.Text);
+            shortSpecialLossCutFr = Convert.ToSingle(textBoxShortSpecialLossCutBegin.Text);
+            shortSpecialLossCutTo = Convert.ToSingle(textBoxShortSpecialLossCutEnd.Text);
+
+
+            longProfitCutFr = Convert.ToSingle(textBoxLongProfitCutBegin.Text);
+            longProfitCutTo = Convert.ToSingle(textBoxLongProfitCutEnd.Text);
+            shortProfitCutFr = Convert.ToSingle(textBoxShortProfitCutBegin.Text);
+            shortProfitCutTo = Convert.ToSingle(textBoxShortProfitCutEnd.Text);
+
+            longSpecialProfitCutFr = Convert.ToSingle(textBoxLongSpecialProfitCutBegin.Text);
+            longSpecialProfitCutTo = Convert.ToSingle(textBoxLongSpecialProfitCutEnd.Text);
+            shortSpecialProfitCutFr = Convert.ToSingle(textBoxShortSpecialProfitCutBegin.Text);
+            shortSpecialProfitCutTo = Convert.ToSingle(textBoxShortSpecialProfitCutEnd.Text);
+
+
+
+        }
+
+        private void checkBoxLossCutBasic_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxLossCutBasic.Checked.Equals(false))
+                lossCutBasicYN = false;
+            else
+                lossCutBasicYN = true;
+        }
+
+        private void checkBoxLossCutSpecial_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxLossCutSpecial.Checked.Equals(false))
+                lossCutSpecialYN = false;
+            else
+                lossCutSpecialYN = true;
+
         }
     }
 }

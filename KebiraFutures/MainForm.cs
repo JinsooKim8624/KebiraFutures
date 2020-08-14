@@ -35,6 +35,14 @@ namespace KebiraFutures
 
             Util.listBoxSysMsg = listBoxSysMsg;
             Util.form = this;
+
+            gridSetup.Rows.Add(4);
+            gridSetup.RowHeadersWidth = 150;
+            gridSetup.Rows[0].HeaderCell.Value = "선물잔량 : 매수";
+            gridSetup.Rows[1].HeaderCell.Value = "선물잔량 : 매도";
+            gridSetup.Rows[2].HeaderCell.Value = "진입틱수 : 매수";
+            gridSetup.Rows[3].HeaderCell.Value = "진입틱수 : 매도";
+
         }
 
         void myXASessionClass_Disconnect()
@@ -67,9 +75,6 @@ namespace KebiraFutures
 
                 t9944 myt9944 = new t9944();
                 myt9944.QueryExcute(new Dictionary<string, string>());
-
-
-
 
 
                 //메뉴항목 활성화
@@ -146,6 +151,8 @@ namespace KebiraFutures
                     toolStripStatusLabel1.Text = "Login 전송 실패.";
                 }
             }
+
+
         }
 
         private void 계좌리스트ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -182,6 +189,11 @@ namespace KebiraFutures
                         }
                     }
                 }
+
+                잔고조회ToolStripMenuItem_Click(null, null);
+
+                현재가ToolStripMenuItem_Click(null, null);
+
             }
         }
         
@@ -251,26 +263,8 @@ namespace KebiraFutures
         public static int shortEnterTickTo;
 
 
-        public static double longLossCutFr;
-        public static double longLossCutTo;
-        public static double shortLossCutFr;
-        public static double shortLossCutTo;
-
-        public static double longSpecialLossCutFr;
-        public static double longSpecialLossCutTo;
-        public static double shortSpecialLossCutFr;
-        public static double shortSpecialLossCutTo;
 
 
-        public static double longProfitCutFr;
-        public static double longProfitCutTo;
-        public static double shortProfitCutFr;
-        public static double shortProfitCutTo;
-
-        public static double longSpecialProfitCutFr;
-        public static double longSpecialProfitCutTo;
-        public static double shortSpecialProfitCutFr;
-        public static double shortSpecialProfitCutTo;
 
 
 
@@ -316,33 +310,6 @@ namespace KebiraFutures
 
 
             //손절라인
-            textBoxLongLossCutBegin.Text = ConfigurationManager.AppSettings["LongLossCutBegin"];
-            textBoxLongLossCutEnd.Text = ConfigurationManager.AppSettings["LongLossCutEnd"];
-
-            textBoxShortLossCutBegin.Text = ConfigurationManager.AppSettings["ShortLossCutBegin"];
-            textBoxShortLossCutEnd.Text = ConfigurationManager.AppSettings["ShortLossCutEnd"];
-
-            //손절라인_특정
-            textBoxLongSpecialLossCutBegin.Text = ConfigurationManager.AppSettings["LongSpecialLossCutBegin"];
-            textBoxLongSpecialLossCutEnd.Text = ConfigurationManager.AppSettings["LongSpecialLossCutEnd"];
-
-            textBoxShortSpecialLossCutBegin.Text = ConfigurationManager.AppSettings["ShortSpecialLossCutBegin"];
-            textBoxShortSpecialLossCutEnd.Text = ConfigurationManager.AppSettings["ShortSpecialLossCutEnd"];
-
-
-            //익절라인
-            textBoxLongProfitCutBegin.Text = ConfigurationManager.AppSettings["LongProfitCutBegin"];
-            textBoxLongProfitCutEnd.Text = ConfigurationManager.AppSettings["LongProfitCutEnd"];
-
-            textBoxShortProfitCutBegin.Text = ConfigurationManager.AppSettings["ShortProfitCutBegin"];
-            textBoxShortProfitCutEnd.Text = ConfigurationManager.AppSettings["ShortProfitCutEnd"];
-
-            //익절라인_특정
-            textBoxLongSpecialProfitCutBegin.Text = ConfigurationManager.AppSettings["LongSpecialProfitCutBegin"];
-            textBoxLongSpecialProfitCutEnd.Text = ConfigurationManager.AppSettings["LongSpecialProfitCutEnd"];
-
-            textBoxShortSpecialProfitCutBegin.Text = ConfigurationManager.AppSettings["ShortSpecialProfitCutBegin"];
-            textBoxShortSpecialProfitCutEnd.Text = ConfigurationManager.AppSettings["ShortSpecialProfitCutEnd"];
 
 
 
@@ -362,26 +329,6 @@ namespace KebiraFutures
             shortEnterTickTo = Convert.ToInt32(textBoxShortTickRangeEnd.Text);
 
 
-            longLossCutFr = Convert.ToSingle(textBoxLongLossCutBegin.Text);
-            longLossCutTo = Convert.ToSingle(textBoxLongLossCutEnd.Text);
-            shortLossCutFr = Convert.ToSingle(textBoxShortLossCutBegin.Text);
-            shortLossCutTo = Convert.ToSingle(textBoxShortLossCutEnd.Text);
-
-            longSpecialLossCutFr = Convert.ToSingle(textBoxLongSpecialLossCutBegin.Text);
-            longSpecialLossCutTo = Convert.ToSingle(textBoxLongSpecialLossCutEnd.Text);
-            shortSpecialLossCutFr = Convert.ToSingle(textBoxShortSpecialLossCutBegin.Text);
-            shortSpecialLossCutTo = Convert.ToSingle(textBoxShortSpecialLossCutEnd.Text);
-
-
-            longProfitCutFr = Convert.ToSingle(textBoxLongProfitCutBegin.Text);
-            longProfitCutTo = Convert.ToSingle(textBoxLongProfitCutEnd.Text);
-            shortProfitCutFr = Convert.ToSingle(textBoxShortProfitCutBegin.Text);
-            shortProfitCutTo = Convert.ToSingle(textBoxShortProfitCutEnd.Text);
-
-            longSpecialProfitCutFr = Convert.ToSingle(textBoxLongSpecialProfitCutBegin.Text);
-            longSpecialProfitCutTo = Convert.ToSingle(textBoxLongSpecialProfitCutEnd.Text);
-            shortSpecialProfitCutFr = Convert.ToSingle(textBoxShortSpecialProfitCutBegin.Text);
-            shortSpecialProfitCutTo = Convert.ToSingle(textBoxShortSpecialProfitCutEnd.Text);
 
 
             //t8432 jisuFutures = new t8432();
@@ -412,31 +359,5 @@ namespace KebiraFutures
 
 
 
-        private void checkBoxLong_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxLong.Checked.Equals(true))
-            {
-                Util.WriteSysMsg("매수로직이 선택되었습니다.");
-            }
-            else if (checkBoxLong.Checked.Equals(false))
-            {
-                Util.WriteSysMsg("매수로직이 취소되었습니다.");
-
-            }
-        }
-
-        private void checkBoxShort_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxShort.Checked.Equals(true))
-            {
-                Util.WriteSysMsg("매도로직이 선택되었습니다.");
-            }
-            else if (checkBoxShort.Checked.Equals(false))
-            {
-                Util.WriteSysMsg("매도로직이 취소되었습니다.");
-
-            }
-
-        }
     }
 }
